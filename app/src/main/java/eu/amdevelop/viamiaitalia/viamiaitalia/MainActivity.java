@@ -7,7 +7,6 @@ import android.util.Log;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -19,26 +18,42 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
-import java.util.ArrayList;
+
+import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Contact;
 
 public class MainActivity extends AppCompatActivity {
 
     TextView textView;
+    TextView address;
+    TextView state;
     ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_contact);
 
-        textView = (TextView) findViewById(R.id.textView);
-        listView = (ListView) findViewById(R.id.listView);
+//        textView = (TextView) findViewById(R.id.textView);
+        address = (TextView) findViewById(R.id.address);
+        state = (TextView) findViewById(R.id.state);
+//        listView = (ListView) findViewById(R.id.listView);
 
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl("http://pokeapi.co/api/v2/pokemon/1/")
+//                .build();
+//        Log.d("Retrofit: ", retrofit.toString());
+//        Gson gson = new Gson(retrofit.);
+//        Gson gsonPokemon = retrofit.create(Gson.class);
+//
+//        Log.d("GSON POKEMON: ", gsonPokemon.toJson(gsonPokemon));
+
+//
         AsyncTask background = new BackgroundTasks();
         //background.execute("https://jsonplaceholder.typicode.com/users");
-        background.execute("http://10.0.2.2:8000/api/users/me");
+        background.execute("http://10.0.2.2:8000/api/contact");
+        //Log.d("",);
 //        Object nieco = background
-
+//
 
         StringBuilder builder = new StringBuilder();
         builder.append("world");
@@ -50,12 +65,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void render(Object json) {
 
-        JSONArray root;
-        String name = "a";
-        ArrayList<String> arrayList = null;
+        JSONObject root;
+        Contact contact;
         try {
-            root = new JSONArray(json.toString());
-            JSONObject first = root.getJSONObject(0);
+            root = new JSONObject(json.toString());
+            contact = new Contact(root);
+            Log.d("Address", contact.getAddress());
+            Log.d("JSON Object", root.toString());
+            address.setText(contact.getAddress());
+            state.setText(contact.getState());
 
         } catch (JSONException e) {
             e.printStackTrace();
