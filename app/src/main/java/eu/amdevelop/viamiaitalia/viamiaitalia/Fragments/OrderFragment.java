@@ -1,4 +1,4 @@
-package eu.amdevelop.viamiaitalia.viamiaitalia;
+package eu.amdevelop.viamiaitalia.viamiaitalia.Fragments;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -9,7 +9,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Contact;
+import eu.amdevelop.viamiaitalia.viamiaitalia.R;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Services.DataService;
+//import eu.amdevelop.viamiaitalia.viamiaitalia.Services.DataService;
 
 
 /**

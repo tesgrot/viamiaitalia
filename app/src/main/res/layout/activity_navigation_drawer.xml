@@ -32,10 +32,20 @@
             <TextView
                 android:id="@+id/log_out"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="38dp"
                 android:clickable="true"
+                android:fontFamily="sans-serif"
                 android:gravity="center"
-                android:text="Log out" />
+                android:text="Log out"
+                android:textColor="#b2b2b2" />
+
+            <TextView
+                android:id="@+id/version"
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:clickable="false"
+                android:gravity="center"
+                android:text="v1.0.0" />
         </LinearLayout>
     </android.support.design.widget.NavigationView>
 
