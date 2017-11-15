@@ -33,7 +33,7 @@ public class DataManager {
         ArrayList<Service> posts = new ArrayList<>();
 
         try {
-            JSONArray jsonPosts = dataService.execute("https://jsonplaceholder.typicode.com/posts").get();
+            JSONArray jsonPosts = dataService.execute("http://10.0.2.2:8000/api/services").get();
 
             for (int i = 0; i < jsonPosts.length(); i++) {
                 JSONObject serviceObject = jsonPosts.getJSONObject(i);
@@ -48,6 +48,8 @@ public class DataManager {
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (NullPointerException e) {
             e.printStackTrace();
         }
 
@@ -79,7 +81,7 @@ public class DataManager {
         destroyInstance();
 
         try {
-            JSONArray jsonContacts = dataService.execute("https://jsonplaceholder.typicode.com/photos").get();
+            JSONArray jsonContacts = dataService.execute("http://10.0.2.2:8000/api/contact").get();
             JSONObject jsonObject = jsonContacts.getJSONObject(0);
             Contact contact = new Contact(jsonObject);
 

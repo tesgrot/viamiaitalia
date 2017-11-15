@@ -1,16 +1,29 @@
 package eu.amdevelop.viamiaitalia.viamiaitalia.Services;
 
+import android.app.Activity;
+import android.content.SharedPreferences;
+
 /**
  * Created by terezamadova on 10/11/2017.
  */
 
-class LocalDataManager {
-    private static final LocalDataManager ourInstance = new LocalDataManager();
+class LocalDataManager extends Activity {
+    private static final String PREFS_NAME = "ViaMiaItalia";
+    SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+    SharedPreferences.Editor editor = preferences.edit();
 
-    private LocalDataManager() {
+
+    public void saveUser(String accessCode) {
+        editor.putString("accessCode", accessCode);
+        editor.commit();
     }
 
-    static LocalDataManager getInstance() {
-        return ourInstance;
+    public String getAccessCode() {
+        return preferences.getString("accessCode", null);
+    }
+
+    public void deleteAll() {
+        editor.clear();
+        editor.commit();
     }
 }

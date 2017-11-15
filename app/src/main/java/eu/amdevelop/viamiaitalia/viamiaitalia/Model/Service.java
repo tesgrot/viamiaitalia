@@ -85,4 +85,17 @@ public class Service {
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
     }
+
+    @Override
+    public String toString() {
+        return "Service{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", descriptionLong='" + descriptionLong + '\'' +
+                ", minPirce=" + minPirce +
+                ", duration=" + duration +
+                ", durationUnit='" + durationUnit + '\'' +
+                ", imageURL='" + imageURL + '\'' +
+                '}';
+    }
 }

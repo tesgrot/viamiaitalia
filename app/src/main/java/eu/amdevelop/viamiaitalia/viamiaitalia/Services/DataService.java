@@ -1,6 +1,7 @@
 package eu.amdevelop.viamiaitalia.viamiaitalia.Services;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,6 +28,7 @@ public class DataService extends AsyncTask<String, Void, JSONArray> {
         String result;
         String inputLine;
 
+        Log.d("jsdfhskdjf", "HOVNO!!!");
 
         try {
             //Create a URL object holding our url
@@ -39,8 +41,12 @@ public class DataService extends AsyncTask<String, Void, JSONArray> {
             connection.setReadTimeout(READ_TIMEOUT);
             connection.setConnectTimeout(CONNECTION_TIMEOUT);
 
+            Log.d("!!!!!!!!", " PRED CONNECTION CONNECT");
+
             //Connect to our url
             connection.connect();
+
+            Log.d("!!!!!!!!", " PO CONNECTION CONNECT");
 
             //Create a new InputStreamReader
             InputStreamReader streamReader = new InputStreamReader(connection.getInputStream());
@@ -57,7 +63,10 @@ public class DataService extends AsyncTask<String, Void, JSONArray> {
             //Set our result equal to our stringBuilder
             result = stringBuilder.toString();
 
+            Log.d("JSON: ", result);
+
             JSONArray jsonPosts = new JSONArray(result);
+            Log.d("JSON: ", jsonPosts.toString());
             return jsonPosts;
 
         } catch (IOException e) {

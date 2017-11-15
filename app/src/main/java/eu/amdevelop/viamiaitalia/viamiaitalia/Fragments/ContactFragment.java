@@ -3,11 +3,15 @@ package eu.amdevelop.viamiaitalia.viamiaitalia.Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Contact;
 import eu.amdevelop.viamiaitalia.viamiaitalia.R;
+import eu.amdevelop.viamiaitalia.viamiaitalia.Services.DataManager;
 
 
 /**
@@ -15,6 +19,7 @@ import eu.amdevelop.viamiaitalia.viamiaitalia.R;
  */
 public class ContactFragment extends Fragment {
 
+    TextView address;
 
     public ContactFragment() {
         // Required empty public constructor
@@ -25,7 +30,17 @@ public class ContactFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contact, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_contact, container, false);
+
+        Contact contact = DataManager.getInstance().getContact();
+        Log.d("", contact.toString());
+
+        address = (TextView) view.findViewById(R.id.contact_address);
+        address.setText(contact.getAddress());
+
+
+        return view;
     }
 
 }

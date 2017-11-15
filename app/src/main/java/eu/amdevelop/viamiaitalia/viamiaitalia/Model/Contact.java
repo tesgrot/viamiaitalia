@@ -24,17 +24,17 @@ public class Contact {
 
     public Contact(JSONObject obj) {
         try {
-            this.address = obj.getString("address");
-            this.houseNo = obj.getInt("house_number");
-            this.city = obj.getString("city");
-            this.state = obj.getString("state");
-            this.phone = obj.getString("number");
-            this.email = obj.getString("email");
-            this.facebookUrl = obj.getString("facebook_u_r_l");
-            this.twitterUrl = obj.getString("twitter_u_r_l");
-            this.instagramUrl = obj.getString("instagram_u_r_l");
-            this.contactPerson = obj.getString("contact_person");
-            this.note = obj.getString("note");
+            this.address = obj.getString(Keywords.ContactKeywords.address.name());
+            this.houseNo = obj.getInt(Keywords.ContactKeywords.house_number.name());
+            this.city = obj.getString(Keywords.ContactKeywords.city.name());
+            this.state = obj.getString(Keywords.ContactKeywords.state.name());
+            this.phone = obj.getString(Keywords.ContactKeywords.number.name());
+            this.email = obj.getString(Keywords.ContactKeywords.email.name());
+            this.facebookUrl = obj.getString(Keywords.ContactKeywords.facebook_u_r_l.name());
+            this.twitterUrl = obj.getString(Keywords.ContactKeywords.twitter_u_r_l.name());
+            this.instagramUrl = obj.getString(Keywords.ContactKeywords.instagram_u_r_l.name());
+            this.contactPerson = obj.getString(Keywords.ContactKeywords.contact_person.name());
+            this.note = obj.getString(Keywords.ContactKeywords.note.name());
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -129,4 +129,20 @@ public class Contact {
         this.note = note;
     }
 
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "address='" + address + '\'' +
+                ", houseNo=" + houseNo +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", facebookUrl='" + facebookUrl + '\'' +
+                ", twitterUrl='" + twitterUrl + '\'' +
+                ", instagramUrl='" + instagramUrl + '\'' +
+                ", contactPerson='" + contactPerson + '\'' +
+                ", note='" + note + '\'' +
+                '}';
+    }
 }
