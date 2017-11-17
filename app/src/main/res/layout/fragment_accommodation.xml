@@ -5,15 +5,21 @@
     tools:context="eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.AccommodationFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!--<TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="@string/hello_blank_fragment" />-->
+
+    <!--<com.google.android.gms.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />-->
 
     <fragment
-        android:id="@+id/mapView"
+        android:id="@+id/map"
         android:name="com.google.android.gms.maps.MapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="300dp" />
+
 
 </FrameLayout>
