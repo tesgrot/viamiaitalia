@@ -1,7 +1,9 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:isScrollContainer="true"
     tools:context="eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.AccommodationFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -15,11 +17,117 @@
         android:layout_width="match_parent"
         android:layout_height="300dp" />-->
 
-    <fragment
-        android:id="@+id/map"
-        android:name="com.google.android.gms.maps.MapFragment"
+
+    <LinearLayout
+        android:id="@+id/linlay"
         android:layout_width="match_parent"
-        android:layout_height="300dp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/screen_background_dark_transparent" />
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:paddingTop="24dp"
+            android:text="Villa Mare"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:paddingBottom="24dp"
+            android:text="Tuscany"
+            android:textAlignment="center"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:text="Accusantium repellat dolor ipsam quaerat. Possimus debitis iste illo sunt aut nihil suscipit eius. Architecto voluptate enim minus molestias. Dignissimos delectus inventore repudiandae qui rem est et. Recusandae consequuntur sed temporibus. Voluptatem vero natus rerum deserunt sit laborum."
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="24dp"
+            android:paddingTop="24dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="4"
+                    android:textAlignment="center"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="Bathrooms"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="2"
+                    android:textAlignment="center"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="Bedrooms"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+    </LinearLayout>
 </FrameLayout>
