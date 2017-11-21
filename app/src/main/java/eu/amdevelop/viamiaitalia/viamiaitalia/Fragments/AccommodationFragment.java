@@ -10,8 +10,6 @@ import android.view.ViewGroup;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import eu.amdevelop.viamiaitalia.viamiaitalia.R;
 
@@ -52,10 +50,10 @@ public class AccommodationFragment extends Fragment/* implements OnMapReadyCallb
     @Override
     public void onResume() {
         super.onResume();
-        if (map == null) {
+        /*if (map == null) {
 //            map = fragment.getMap(); TOTO TU ALE MA BYT, LEN TO NEFUNGUJE :(
             map.addMarker(new MarkerOptions().position(new LatLng(0, 0)));
-        }
+        }*/
     }
 
     /*public static String StreamToString(InputStream in) throws IOException {

@@ -22,6 +22,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
     NavigationView navigationView = null;
     Toolbar toolbar = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,6 +101,11 @@ public class NavigationDrawerActivity extends AppCompatActivity
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_wine) {
+            WineFragment wineFragment = new WineFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, wineFragment);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_contacts) {
             ContactFragment contactFragment = new ContactFragment();

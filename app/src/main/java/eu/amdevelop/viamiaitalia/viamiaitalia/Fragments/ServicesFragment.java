@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Service;
 import eu.amdevelop.viamiaitalia.viamiaitalia.R;
 import eu.amdevelop.viamiaitalia.viamiaitalia.RVAdapter;
+import eu.amdevelop.viamiaitalia.viamiaitalia.Services.DataManager;
 
 
 /**
@@ -58,7 +59,7 @@ public class ServicesFragment extends Fragment {
 
     private ArrayList<Service> getDataSet() {
         ArrayList results = new ArrayList<Service>();
-//        results = DataManager.getInstance().getServices();
+        results = DataManager.getInstance().getServices();
         Log.d("Services: ", results.toString());
         /*for (int index = 0; index < 20; index++) {
             Service obj = new Service("Service name",
