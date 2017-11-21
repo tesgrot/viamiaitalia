@@ -106,10 +106,10 @@ public class AccommodationFragment extends Fragment implements OnMapReadyCallbac
     @Override
     public void onResume() {
         super.onResume();
-        /*if (map == null) {
+        if (map == null) {
 //            map = fragment.getMap(); TOTO TU ALE MA BYT, LEN TO NEFUNGUJE :(
             map.addMarker(new MarkerOptions().position(new LatLng(0, 0)));
-        }*/
+        }
     }
 
     public static String StreamToString(InputStream in) throws IOException {

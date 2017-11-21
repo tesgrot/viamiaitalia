@@ -16,6 +16,10 @@
         android:id="@+id/map"
         android:layout_width="match_parent"
         android:layout_height="300dp" />-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
 
 
     <LinearLayout
@@ -34,30 +38,23 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_light"
             android:paddingTop="24dp"
             android:text="Villa Mare"
-            android:textAlignment="center"
-            android:textSize="24sp" />
+            style="@style/Header"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_light"
             android:paddingBottom="24dp"
             android:text="Tuscany"
-            android:textAlignment="center"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="18sp" />
+            style="@style/Subheader"
+             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_light"
-            android:paddingLeft="12dp"
-            android:paddingRight="12dp"
             android:text="Accusantium repellat dolor ipsam quaerat. Possimus debitis iste illo sunt aut nihil suscipit eius. Architecto voluptate enim minus molestias. Dignissimos delectus inventore repudiandae qui rem est et. Recusandae consequuntur sed temporibus. Voluptatem vero natus rerum deserunt sit laborum."
-            android:textSize="15sp" />
+            android:style="@style/Paragraph" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -78,21 +75,16 @@
                     android:id="@+id/textView3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_light"
                     android:text="4"
-                    android:textAlignment="center"
-                    android:textSize="24sp" />
+                    style="@style/Header" />
 
                 <TextView
                     android:id="@+id/textView7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_light"
                     android:text="Bathrooms"
-                    android:textAlignment="center"
-                    android:textAllCaps="false"
-                    android:textColor="@android:color/darker_gray"
-                    android:textSize="18sp" />
+                    style="@style/Subheader"
+                    />
             </LinearLayout>
 
             <LinearLayout
@@ -105,21 +97,15 @@
                     android:id="@+id/textView4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_light"
                     android:text="2"
-                    android:textAlignment="center"
-                    android:textSize="24sp" />
+                    style="@style/Header" />
 
                 <TextView
                     android:id="@+id/textView8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_light"
                     android:text="Bedrooms"
-                    android:textAlignment="center"
-                    android:textAllCaps="false"
-                    android:textColor="@android:color/darker_gray"
-                    android:textSize="18sp" />
+                    style="@style/Subheader"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -130,4 +116,5 @@
             android:layout_height="200dp" />
 
     </LinearLayout>
+    </ScrollView>
 </FrameLayout>

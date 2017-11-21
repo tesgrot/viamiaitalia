@@ -21,6 +21,28 @@
         <item name="android:fontFamily">sans-serif-light</item>
     </style>
 
+    <style name="Header">
+        <item name="android:fontFamily">@font/poppins_light</item>
+        <item name="android:color">@color/colorPrimary</item>
+        <item name="android:textSize">24dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="Subheader">
+        <item name="android:fontFamily">@font/poppins_light</item>
+        <item name="android:color">@android:color/darker_gray</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="Paragraph">
+        <item name="android:fontFamily">@font/poppins_light</item>
+        <item name="android:color">@color/colorPrimary</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+    </style>
+
     <style name="sidePadding">
         <item name="android:paddingLeft">@dimen/min_padding</item>
         <item name="android:paddingRight">@dimen/min_padding</item>
