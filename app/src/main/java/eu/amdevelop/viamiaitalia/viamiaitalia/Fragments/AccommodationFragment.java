@@ -2,14 +2,26 @@ package eu.amdevelop.viamiaitalia.viamiaitalia.Fragments;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -19,10 +31,51 @@ import eu.amdevelop.viamiaitalia.viamiaitalia.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AccommodationFragment extends Fragment/* implements OnMapReadyCallback*/ {
+public class AccommodationFragment extends Fragment implements OnMapReadyCallback {
+
+    private GoogleMap mGoogleMap;
+    private MapView mMapView;
+    private View mView;
+    private boolean mapsSupported = true;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        mView = inflater.inflate(R.layout.fragment_accommodation, container, false);
+
+
+        return mView;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        mMapView = (MapView) mView.findViewById(R.id.mapView);
+        if (mMapView != null) {
+            mMapView.onCreate(null);
+            mMapView.onResume();
+            mMapView.getMapAsync(this);
+
+        }
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        MapsInitializer.initialize(getContext());
+        mGoogleMap = googleMap;
+
+        LatLng sydney = new LatLng(-34, 151);
+        googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    }
+}
+
+
+/*
 
 //    MapView mapView;
-//    GoogleMap googleMap;
+//    GoogleMap googleMap;`
 //    private WebView contactWebView;
 
 
@@ -58,7 +111,7 @@ public class AccommodationFragment extends Fragment/* implements OnMapReadyCallb
         }
     }
 
-    /*public static String StreamToString(InputStream in) throws IOException {
+    public static String StreamToString(InputStream in) throws IOException {
         if (in == null) {
             return "";
         }
@@ -121,5 +174,5 @@ public class AccommodationFragment extends Fragment/* implements OnMapReadyCallb
         CameraUpdate update = CameraUpdateFactory.newLatLng(ll);
         googleMap.moveCamera(update);
 
-    }*/
-}
+    }
+}*/
