@@ -19,7 +19,8 @@ import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Service;
 
 public class DataManager {
 
-    public static final String IP_ADDRESS = "http://10.152.192.115:8000/api/";
+    public static final String IP_ADDRESS = "http://10.0.2.2:8000/api/";
+    //    public static final String IP_ADDRESS = "http://10.152.192.115:8000/api/";
     private static final DataManager ourInstance = new DataManager();
     private DataService dataService;
 
@@ -41,6 +42,7 @@ public class DataManager {
 
             for (int i = 0; i < jsonPosts.length(); i++) {
                 JSONObject serviceObject = jsonPosts.getJSONObject(i);
+                Log.d("hfsdjkhfksj", serviceObject.toString());
                 Service service = new Service(serviceObject);
                 Log.d("!!!!getnutyService", service.toString());
                 posts.add(service);
@@ -105,6 +107,12 @@ public class DataManager {
 
         return null;
 
+    }
+
+    public boolean verifyCode(String code) {
+        destroyInstance();
+        //TODO
+        return false;
     }
 
     private void destroyInstance() {

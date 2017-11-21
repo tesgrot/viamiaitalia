@@ -1,7 +1,6 @@
 package eu.amdevelop.viamiaitalia.viamiaitalia;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Service;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Model.ServiceElement;
 
 /**
@@ -26,12 +26,12 @@ public class LVAdapter extends ArrayAdapter<ServiceElement> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View listItemView = convertView;
-        Log.d("Position: ", position + "");
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.service_element, parent, false);
         }
         if (position == 0) {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.service_header, parent, false);
+            Service service = new Service(null);
         } else {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.service_element, parent, false);
 

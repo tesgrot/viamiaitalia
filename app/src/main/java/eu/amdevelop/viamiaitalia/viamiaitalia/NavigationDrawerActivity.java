@@ -15,6 +15,7 @@ import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.AccommodationFragment;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.ContactFragment;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.OrderFragment;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.ServicesFragment;
+import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.WineFragment;
 
 public class NavigationDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

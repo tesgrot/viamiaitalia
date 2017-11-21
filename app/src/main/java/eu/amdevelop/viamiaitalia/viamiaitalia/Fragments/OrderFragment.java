@@ -12,7 +12,6 @@ import android.widget.TextView;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Contact;
 import eu.amdevelop.viamiaitalia.viamiaitalia.R;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Services.DataService;
-import eu.amdevelop.viamiaitalia.viamiaitalia.WineFragment;
 //import eu.amdevelop.viamiaitalia.viamiaitalia.Services.DataService;
 
 

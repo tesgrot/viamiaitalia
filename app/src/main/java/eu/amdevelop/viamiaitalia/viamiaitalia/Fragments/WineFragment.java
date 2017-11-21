@@ -1,4 +1,4 @@
-package eu.amdevelop.viamiaitalia.viamiaitalia;
+package eu.amdevelop.viamiaitalia.viamiaitalia.Fragments;
 
 
 import android.os.Bundle;
@@ -11,7 +11,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import eu.amdevelop.viamiaitalia.viamiaitalia.LVAdapter;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Model.ServiceElement;
+import eu.amdevelop.viamiaitalia.viamiaitalia.R;
 
 
 /**

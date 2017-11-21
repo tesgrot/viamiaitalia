@@ -34,14 +34,14 @@ public class ContactFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_contact, container, false);
 
-        Contact contact = getDataSet();
-        Log.d("onCreat from getDataSet", contact.toString());
-
         name = (TextView) view.findViewById(R.id.contact_name);
         phone = (TextView) view.findViewById(R.id.contact_phone);
         mail = (TextView) view.findViewById(R.id.contact_mail);
         address = (TextView) view.findViewById(R.id.contact_address);
         try {
+            Contact contact = getDataSet();
+            Log.d("onCreat from getDataSet", contact.toString());
+
             name.setText(contact.getContactPerson());
             phone.setText(contact.getPhone());
             mail.setText(contact.getEmail());
