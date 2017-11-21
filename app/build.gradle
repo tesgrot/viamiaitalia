@@ -5,7 +5,7 @@ android {
     buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "eu.amdevelop.viamiaitalia.viamiaitalia"
-        minSdkVersion 14 //19
+        minSdkVersion 19
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"

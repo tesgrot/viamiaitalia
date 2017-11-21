@@ -15,6 +15,7 @@ import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.AccommodationFragment;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.ContactFragment;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.OrderFragment;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.ServicesFragment;
+import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.WineFragment;
 
 public class NavigationDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -22,6 +23,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
     NavigationView navigationView = null;
     Toolbar toolbar = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,6 +102,11 @@ public class NavigationDrawerActivity extends AppCompatActivity
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_wine) {
+            WineFragment wineFragment = new WineFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, wineFragment);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_contacts) {
             ContactFragment contactFragment = new ContactFragment();

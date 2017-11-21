@@ -28,8 +28,6 @@ public class DataService extends AsyncTask<String, Void, JSONArray> {
         String result;
         String inputLine;
 
-        Log.d("jsdfhskdjf", "HOVNO!!!");
-
         try {
             //Create a URL object holding our url
             URL myUrl = new URL(stringUrl);
@@ -43,16 +41,22 @@ public class DataService extends AsyncTask<String, Void, JSONArray> {
 
             Log.d("!!!!!!!!", " PRED CONNECTION CONNECT");
 
+//            connection.setRequestProperty("Authorization", "a5dbf60f");
+
             //Connect to our url
             connection.connect();
+            Log.d("Connection: ", connection.toString());
 
             Log.d("!!!!!!!!", " PO CONNECTION CONNECT");
 
             //Create a new InputStreamReader
             InputStreamReader streamReader = new InputStreamReader(connection.getInputStream());
+            Log.d("!!!!!!!!", " InputStreamReader");
             //Create a new buffered reader and String Builder
             BufferedReader reader = new BufferedReader(streamReader);
+            Log.d("!!!!!!!!", " BufferedReader");
             StringBuilder stringBuilder = new StringBuilder();
+            Log.d("!!!!!!!!", " StringBuilder");
             //Check if the line we are reading is not null
             while ((inputLine = reader.readLine()) != null) {
                 stringBuilder.append(inputLine);

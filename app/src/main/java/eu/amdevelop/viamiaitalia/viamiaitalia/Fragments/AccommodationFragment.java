@@ -21,6 +21,7 @@ import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -105,10 +106,10 @@ public class AccommodationFragment extends Fragment implements OnMapReadyCallbac
     @Override
     public void onResume() {
         super.onResume();
-        if (map == null) {
+        /*if (map == null) {
 //            map = fragment.getMap(); TOTO TU ALE MA BYT, LEN TO NEFUNGUJE :(
             map.addMarker(new MarkerOptions().position(new LatLng(0, 0)));
-        }
+        }*/
     }
 
     public static String StreamToString(InputStream in) throws IOException {
