@@ -1,5 +1,7 @@
 package eu.amdevelop.viamiaitalia.viamiaitalia.Model;
 
+import org.json.JSONObject;
+
 /**
  * Created by terezamadova on 21/11/2017.
  */
@@ -14,6 +16,14 @@ public class ServiceElement {
         this.id = id;
         this.durationUnit = durationUnit;
         this.descriptionLong = descriptionLong;
+    }
+
+    public ServiceElement(JSONObject obj) {
+//        this.pricePerson = pricePerson;
+//        this.duration = duration;
+//        this.id = id;
+//        this.durationUnit = durationUnit;
+//        this.descriptionLong = descriptionLong;
     }
 
     @Override

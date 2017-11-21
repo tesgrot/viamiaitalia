@@ -1,5 +1,7 @@
 package eu.amdevelop.viamiaitalia.viamiaitalia.Services;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -38,6 +40,7 @@ public class DataManager {
             for (int i = 0; i < jsonPosts.length(); i++) {
                 JSONObject serviceObject = jsonPosts.getJSONObject(i);
                 Service service = new Service(serviceObject);
+                Log.d("!!!!getnutyService", service.toString());
                 posts.add(service);
             }
 
@@ -60,7 +63,7 @@ public class DataManager {
         destroyInstance();
 
         try {
-            JSONArray jsonOrders = dataService.execute("https://jsonplaceholder.typicode.com/users").get();
+            JSONArray jsonOrders = dataService.execute("http://10.0.2.2:8000/api/order").get();
             JSONObject jsonObject = jsonOrders.getJSONObject(0);
             Order order = new Order(jsonObject);
 

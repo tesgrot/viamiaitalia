@@ -40,7 +40,8 @@ public class ServicesFragment extends Fragment {
         adapter = new RVAdapter(getDataSet());
         rv.setAdapter(adapter);
 
-        getDataSet();
+        ArrayList<Service> services = getDataSet();
+        Log.d("Services: (onCreate) ", services.toString());
 
         return view;
     }
@@ -58,14 +59,8 @@ public class ServicesFragment extends Fragment {
     }
 
     private ArrayList<Service> getDataSet() {
-        ArrayList results = new ArrayList<Service>();
-        results = DataManager.getInstance().getServices();
-        Log.d("Services: ", results.toString());
-        /*for (int index = 0; index < 20; index++) {
-            Service obj = new Service("Service name",
-                    "Service description ");
-            results.add(index, obj);
-        }*/
+        ArrayList<Service> results = DataManager.getInstance().getServices();
+        Log.d("Services: getDataSet() ", results.toString());
         return results;
     }
 
