@@ -9,6 +9,7 @@ import org.json.JSONObject;
 
 public class Service {
 
+    private int id;
     private String name;
     private String description;
     private String descriptionLong;
@@ -17,8 +18,10 @@ public class Service {
     private String durationUnit;
     private String imageURL;
 
+
     public Service(JSONObject obj) {
         try {
+            this.id = obj.getInt("id");
             this.name = obj.getString("name");
             this.description = obj.getString("description");
             this.descriptionLong = obj.getString("descriptionLong");
@@ -28,6 +31,10 @@ public class Service {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -89,7 +96,8 @@ public class Service {
     @Override
     public String toString() {
         return "Service{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", descriptionLong='" + descriptionLong + '\'' +
                 ", minPirce=" + minPirce +

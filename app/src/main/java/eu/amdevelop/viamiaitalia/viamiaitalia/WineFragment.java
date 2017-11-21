@@ -59,6 +59,7 @@ public class WineFragment extends Fragment {
         elements.add(new ServiceElement(150, 15, 1, "hours", "wine tours"));
         elements.add(new ServiceElement(200, 20, 2, "hours", "mc donald tasting"));
         elements.add(new ServiceElement(240, 17, 3, "minutes", "river splashing"));
+        elements.add(0, null); //***toto sa pridava aby bol prvy element header
 
 //        ServiceElement el1 = new ServiceElement(150,15,1,"hours","wine tours");
 //        ServiceElement el2 = new ServiceElement(200,20,2,"hours","mc donald tasting");

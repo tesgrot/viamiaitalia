@@ -41,11 +41,11 @@ public class DataService extends AsyncTask<String, Void, JSONArray> {
 
             Log.d("!!!!!!!!", " PRED CONNECTION CONNECT");
 
-            connection.setRequestProperty("Authorisation", "Bearer a5dbf60f"); // ?????
-            connection.setRequestMethod("GET"); // ????????
+            connection.setRequestProperty("Authorization", "kodicek_1");
 
             //Connect to our url
             connection.connect();
+            Log.d("Connection: ", connection.toString());
 
             Log.d("!!!!!!!!", " PO CONNECTION CONNECT");
 

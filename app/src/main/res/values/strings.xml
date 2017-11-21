@@ -14,6 +14,7 @@
 
 
     <string name="google_android_map_api_key">AIzaSyAZw4pjBs_3Ofg-QBMKnmodZiYwwF4sadc</string>
+    <string name="title_activity_service_elements">ServiceElementsActivity</string>
 
     <!-- Strings related to login -->
 

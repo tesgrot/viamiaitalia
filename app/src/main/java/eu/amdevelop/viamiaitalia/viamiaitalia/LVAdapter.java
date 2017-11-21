@@ -1,6 +1,7 @@
 package eu.amdevelop.viamiaitalia.viamiaitalia;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,21 +26,27 @@ public class LVAdapter extends ArrayAdapter<ServiceElement> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View listItemView = convertView;
+        Log.d("Position: ", position + "");
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.service_element, parent, false);
         }
-        ServiceElement current = getItem(position);
+        if (position == 0) {
+            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.service_header, parent, false);
+        } else {
+            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.service_element, parent, false);
 
-        TextView descLong = (TextView) listItemView.findViewById(R.id.servItemlongTV);
-        ImageView img = (ImageView) listItemView.findViewById(R.id.servItemIV);
-        TextView price = (TextView) listItemView.findViewById(R.id.servItemPrice);
-        TextView duration = (TextView) listItemView.findViewById(R.id.servItemDur);
-        TextView durationUnit = (TextView) listItemView.findViewById(R.id.servItemDurUnit);
+            ServiceElement current = getItem(position);
 
-        descLong.setText(current.getDescriptionLong());
-        price.setText(current.getPricePerson() + "");
-        duration.setText(current.getDuration() + "");
-        durationUnit.setText(current.getDurationUnit());
+            TextView descLong = (TextView) listItemView.findViewById(R.id.servItemlongTV);
+            ImageView img = (ImageView) listItemView.findViewById(R.id.servItemIV);
+            TextView price = (TextView) listItemView.findViewById(R.id.servItemPrice);
+            TextView duration = (TextView) listItemView.findViewById(R.id.servItemDur);
+
+            descLong.setText(current.getDescriptionLong());
+            price.setText(current.getPricePerson() + "");
+            duration.setText(current.getDuration() + " " + current.getDurationUnit());
+
+        }
 
         return listItemView;
     }
