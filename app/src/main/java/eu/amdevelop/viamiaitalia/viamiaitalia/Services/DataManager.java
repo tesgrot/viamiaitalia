@@ -131,10 +131,19 @@ public class DataManager {
 
     }
 
-    public boolean verifyCode(String code) {
+    public boolean verifyCode() {
         destroyInstance();
-        //TODO
-        return false;
+        JSONArray test;
+        boolean success = true;
+        try {
+            test = dataService.execute(IP_ADDRESS + "services").get(); //TODO me
+            if (test == null) success = false;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        return success;
     }
 
     private void destroyInstance() {

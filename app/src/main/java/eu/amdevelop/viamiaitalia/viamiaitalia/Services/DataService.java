@@ -21,7 +21,7 @@ public class DataService extends AsyncTask<String, Void, JSONArray> {
     public static final String REQUEST_METHOD = "GET";
     public static final int READ_TIMEOUT = 15000;
     public static final int CONNECTION_TIMEOUT = 15000;
-
+    private static String code;
     @Override
     protected JSONArray doInBackground(String... strings) {
         String stringUrl = strings[0];
@@ -41,37 +41,45 @@ public class DataService extends AsyncTask<String, Void, JSONArray> {
 
             Log.d("!!!!!!!!", " PRED CONNECTION CONNECT");
 
-            connection.setRequestProperty("Authorization", "123456");
+            connection.setRequestProperty("Authorization", code);
+            int statuscode = connection.getResponseCode();
+            if (statuscode == 200) {
 
+                connection.connect();
+                InputStreamReader streamReader = new InputStreamReader(connection.getInputStream());
+                Log.d("!!!!!!!!", " InputStreamReader");
+                //Create a new buffered reader and String Builder
+                BufferedReader reader = new BufferedReader(streamReader);
+                Log.d("!!!!!!!!", " BufferedReader");
+                StringBuilder stringBuilder = new StringBuilder();
+                Log.d("!!!!!!!!", " StringBuilder");
+                //Check if the line we are reading is not null
+                while ((inputLine = reader.readLine()) != null) {
+                    stringBuilder.append(inputLine);
+                }
+                //Close our InputStream and Buffered reader
+                reader.close();
+                streamReader.close();
+                //Set our result equal to our stringBuilder
+                result = stringBuilder.toString();
+
+                Log.d("JSON: ", result);
+                if (result.charAt(0) != '[') {
+                    result = '[' + result + ']';
+                    Log.d("ROBI SA ARRAY", result);
+                }
+                JSONArray jsonPosts = new JSONArray(result);
+                Log.d("JSON: ", jsonPosts.toString());
+                return jsonPosts;
+            }
             //Connect to our url
-            connection.connect();
             Log.d("Connection: ", connection.toString());
 
             Log.d("!!!!!!!!", " PO CONNECTION CONNECT");
 
             //Create a new InputStreamReader
-            InputStreamReader streamReader = new InputStreamReader(connection.getInputStream());
-            Log.d("!!!!!!!!", " InputStreamReader");
-            //Create a new buffered reader and String Builder
-            BufferedReader reader = new BufferedReader(streamReader);
-            Log.d("!!!!!!!!", " BufferedReader");
-            StringBuilder stringBuilder = new StringBuilder();
-            Log.d("!!!!!!!!", " StringBuilder");
-            //Check if the line we are reading is not null
-            while ((inputLine = reader.readLine()) != null) {
-                stringBuilder.append(inputLine);
-            }
-            //Close our InputStream and Buffered reader
-            reader.close();
-            streamReader.close();
-            //Set our result equal to our stringBuilder
-            result = stringBuilder.toString();
 
-            Log.d("JSON: ", result);
-
-            JSONArray jsonPosts = new JSONArray(result);
-            Log.d("JSON: ", jsonPosts.toString());
-            return jsonPosts;
+            return null;
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -88,4 +96,8 @@ public class DataService extends AsyncTask<String, Void, JSONArray> {
         super.onPostExecute(posts);
     }
 
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 }
