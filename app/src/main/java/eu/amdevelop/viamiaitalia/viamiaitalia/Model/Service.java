@@ -1,5 +1,7 @@
 package eu.amdevelop.viamiaitalia.viamiaitalia.Model;
 
+import android.util.Log;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -14,20 +16,21 @@ public class Service {
     private String description;
     private String descriptionLong;
     private double minPirce;
-    private int duration;
-    private String durationUnit;
     private String imageURL;
 
 
+    public Service() {
+
+    }
+
     public Service(JSONObject obj) {
+        Log.d("Service JSON OBJECT ", obj.toString() + "=======\n");
         try {
             this.id = obj.getInt("id");
-            this.name = obj.getString("name");
-            this.description = obj.getString("description");
-            this.descriptionLong = obj.getString("descriptionLong");
-            this.minPirce = obj.getInt("minPrice");
-            this.duration = obj.getInt("duration");
-            this.durationUnit = obj.getString("durationUnit");
+            this.name = obj.getJSONObject("service_e_n").getString("name");
+            this.description = obj.getJSONObject("service_e_n").getString("description");
+            this.descriptionLong = obj.getJSONObject("service_e_n").getString("descriptionLong");
+            this.minPirce = obj.getDouble("minimal_price");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -69,22 +72,6 @@ public class Service {
         this.minPirce = minPirce;
     }
 
-    public int getDuration() {
-        return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-
-    public String getDurationUnit() {
-        return durationUnit;
-    }
-
-    public void setDurationUnit(String durationUnit) {
-        this.durationUnit = durationUnit;
-    }
-
     public String getImageURL() {
         return imageURL;
     }
@@ -101,8 +88,6 @@ public class Service {
                 ", description='" + description + '\'' +
                 ", descriptionLong='" + descriptionLong + '\'' +
                 ", minPirce=" + minPirce +
-                ", duration=" + duration +
-                ", durationUnit='" + durationUnit + '\'' +
                 ", imageURL='" + imageURL + '\'' +
                 '}';
     }

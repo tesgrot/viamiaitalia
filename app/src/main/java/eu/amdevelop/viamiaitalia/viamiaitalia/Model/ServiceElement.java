@@ -1,5 +1,6 @@
 package eu.amdevelop.viamiaitalia.viamiaitalia.Model;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -19,11 +20,15 @@ public class ServiceElement {
     }
 
     public ServiceElement(JSONObject obj) {
-//        this.pricePerson = pricePerson;
-//        this.duration = duration;
-//        this.id = id;
-//        this.durationUnit = durationUnit;
-//        this.descriptionLong = descriptionLong;
+        try {
+            this.id = obj.getInt("id");
+            this.descriptionLong = obj.getJSONObject("service_element_c_s").getString("description_long");
+            this.duration = obj.getInt("duration");
+            this.durationUnit = obj.getString("duration_units");
+            this.pricePerson = obj.getInt("price_person");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

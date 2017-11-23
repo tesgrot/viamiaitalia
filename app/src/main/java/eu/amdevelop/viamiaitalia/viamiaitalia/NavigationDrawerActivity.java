@@ -103,6 +103,9 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_wine) {
             WineFragment wineFragment = new WineFragment();
+            Bundle bdl = new Bundle(1);
+            bdl.putInt("POSITION", 1);
+            wineFragment.setArguments(bdl);
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, wineFragment);

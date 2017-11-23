@@ -25,7 +25,6 @@ public class ContactFragment extends Fragment {
     TextView address;
 
     public ContactFragment() {
-        // Required empty public constructor
     }
 
 
@@ -33,6 +32,8 @@ public class ContactFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_contact, container, false);
+
+        getActivity().setTitle("Contact");
 
         name = (TextView) view.findViewById(R.id.contact_name);
         phone = (TextView) view.findViewById(R.id.contact_phone);

@@ -26,6 +26,7 @@
 
             <TextView
                 android:id="@+id/order_headerTV"
+                style="@style/Header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -50,6 +51,7 @@
 
                     <TextView
                         android:id="@+id/order_i_nameTV"
+                        style="@style/Paragraph"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_column="0"
@@ -58,12 +60,12 @@
 
                     <TextView
                         android:id="@+id/order_info_nameTV"
+                        style="@style/Paragraph"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_column="1"
                         android:padding="3dip"
-                        android:text="Name Surname"
-                        android:textStyle="bold" />
+                        android:text="Name Surname" />
                 </TableRow>
 
                 <TableRow
@@ -73,6 +75,7 @@
 
                     <TextView
                         android:id="@+id/order_i_mailTV"
+                        style="@style/Paragraph"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_column="0"
@@ -81,12 +84,12 @@
 
                     <TextView
                         android:id="@+id/order_info_mailTV"
+                        style="@style/Paragraph"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_column="1"
                         android:padding="3dip"
-                        android:text="mail@mail.com"
-                        android:textStyle="bold" />
+                        android:text="mail@mail.com" />
                 </TableRow>
 
                 <TableRow
@@ -96,6 +99,7 @@
 
                     <TextView
                         android:id="@+id/order_i_phoneTV"
+                        style="@style/Paragraph"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_column="0"
@@ -104,12 +108,12 @@
 
                     <TextView
                         android:id="@+id/order_info_phoneTV"
+                        style="@style/Paragraph"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_column="1"
                         android:padding="3dip"
-                        android:text="+123456"
-                        android:textStyle="bold" />
+                        android:text="+123456" />
                 </TableRow>
 
                 <TableRow
@@ -119,6 +123,7 @@
 
                     <TextView
                         android:id="@+id/order_i_nopplTV"
+                        style="@style/Paragraph"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_column="0"
@@ -127,12 +132,12 @@
 
                     <TextView
                         android:id="@+id/order_info_nopplTV"
+                        style="@style/Paragraph"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_column="1"
                         android:padding="3dip"
-                        android:text="2"
-                        android:textStyle="bold" />
+                        android:text="2" />
                 </TableRow>
 
                 <TableRow
@@ -142,6 +147,7 @@
 
                     <TextView
                         android:id="@+id/order_i_nochTV"
+                        style="@style/Paragraph"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_column="0"
@@ -150,12 +156,12 @@
 
                     <TextView
                         android:id="@+id/order_info_nochTV"
+                        style="@style/Paragraph"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_column="1"
                         android:padding="3dip"
-                        android:text="1"
-                        android:textStyle="bold" />
+                        android:text="1" />
                 </TableRow>
             </TableLayout>
 
@@ -237,6 +243,7 @@
 
             <TextView
                 android:id="@+id/order_accomm_infoTV"
+                style="@style/Header"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -261,6 +268,7 @@
 
                     <TextView
                         android:id="@+id/order_ai_accommTV"
+                        style="@style/Paragraph"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_column="0"
@@ -269,12 +277,12 @@
 
                     <TextView
                         android:id="@+id/order_ainfo_accommTV"
+                        style="@style/Paragraph"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_column="1"
                         android:padding="3dip"
-                        android:text="Villa Amore"
-                        android:textStyle="bold" />
+                        android:text="Villa Amore" />
                 </TableRow>
 
                 <TableRow
@@ -284,6 +292,7 @@
 
                     <TextView
                         android:id="@+id/order_ai_apartTV"
+                        style="@style/Paragraph"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_column="0"
@@ -292,12 +301,12 @@
 
                     <TextView
                         android:id="@+id/order_ainfo_apartTV"
+                        style="@style/Paragraph"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_column="1"
                         android:padding="3dip"
-                        android:text="White Apartment,\nGreen Apartment"
-                        android:textStyle="bold" />
+                        android:text="White Apartment,\nGreen Apartment" />
                 </TableRow>
             </TableLayout>
 

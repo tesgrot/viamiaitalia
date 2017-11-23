@@ -39,6 +39,10 @@ public class OrderFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_order, container, false);
+
+
+        getActivity().setTitle("Your Order");
+
 //        HTTPRequest request = new HTTPRequest();
 //        texticek = view.findViewById(R.id.textView2);
 //        request.execute("http:fjweoj");
@@ -53,10 +57,10 @@ public class OrderFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                WineFragment wineFragment = new WineFragment();
+                AccommodationFragment accommodationFragment = new AccommodationFragment();
                 android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
                 android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, wineFragment);
+                fragmentTransaction.replace(R.id.fragment_container, accommodationFragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }

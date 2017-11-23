@@ -20,7 +20,7 @@
             android:title="Wine" />
         <item
             android:id="@+id/nav_contacts"
-            android:title="Contacts" />
+            android:title="Contact" />
     </group>
 
 </menu>

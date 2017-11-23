@@ -1,5 +1,4 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -36,25 +35,24 @@
 
         <TextView
             android:id="@+id/textView"
+            style="@style/Header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="24dp"
-            android:text="Villa Mare"
-            style="@style/Header"/>
+            android:text="Villa Mare" />
 
         <TextView
+            style="@style/Subheader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="24dp"
-            android:text="Tuscany"
-            style="@style/Subheader"
-             />
+            android:text="Tuscany" />
 
         <TextView
+            style="@style/Paragraph"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Accusantium repellat dolor ipsam quaerat. Possimus debitis iste illo sunt aut nihil suscipit eius. Architecto voluptate enim minus molestias. Dignissimos delectus inventore repudiandae qui rem est et. Recusandae consequuntur sed temporibus. Voluptatem vero natus rerum deserunt sit laborum."
-            android:style="@style/Paragraph" />
+            android:text="Accusantium repellat dolor ipsam quaerat. Possimus debitis iste illo sunt aut nihil suscipit eius. Architecto voluptate enim minus molestias. Dignissimos delectus inventore repudiandae qui rem est et. Recusandae consequuntur sed temporibus. Voluptatem vero natus rerum deserunt sit laborum." />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -73,17 +71,17 @@
 
                 <TextView
                     android:id="@+id/textView3"
+                    style="@style/Header"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="4"
-                    style="@style/Header" />
+                    android:text="4" />
 
                 <TextView
                     android:id="@+id/textView7"
+                    style="@style/Subheader"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Bathrooms"
-                    style="@style/Subheader"
                     />
             </LinearLayout>
 
@@ -95,17 +93,17 @@
 
                 <TextView
                     android:id="@+id/textView4"
+                    style="@style/Header"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="2"
-                    style="@style/Header" />
+                    android:text="2" />
 
                 <TextView
                     android:id="@+id/textView8"
+                    style="@style/Subheader"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Bedrooms"
-                    style="@style/Subheader"/>
+                    android:text="Bedrooms" />
             </LinearLayout>
 
         </LinearLayout>

@@ -33,6 +33,8 @@ public class ServicesFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_services, container, false);
+
+        getActivity().setTitle("Services");
         rv = (RecyclerView) view.findViewById(R.id.services_rv);
         rv.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getContext());
@@ -54,6 +56,20 @@ public class ServicesFragment extends Fragment {
             @Override
             public void onItemClick(int position, View v) {
                 Log.i("Services Fragment: ", " Clicked on Item " + position);
+
+                WineFragment wineFragment = new WineFragment();
+
+                Bundle bdl = new Bundle(1);
+                bdl.putInt("POSITION", position);
+                wineFragment.setArguments(bdl);
+
+//                wineFragment.setPosition(position);
+
+                android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
+                android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, wineFragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
     }

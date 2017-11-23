@@ -1,6 +1,7 @@
 package eu.amdevelop.viamiaitalia.viamiaitalia;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,8 +20,11 @@ import eu.amdevelop.viamiaitalia.viamiaitalia.Model.ServiceElement;
 
 public class LVAdapter extends ArrayAdapter<ServiceElement> {
 
-    public LVAdapter(Context context, ArrayList<ServiceElement> elements) {
+    private Service service;
+
+    public LVAdapter(Context context, ArrayList<ServiceElement> elements, Service service) {
         super(context, 0, elements);
+        this.service = service;
     }
 
     @Override
@@ -31,7 +35,15 @@ public class LVAdapter extends ArrayAdapter<ServiceElement> {
         }
         if (position == 0) {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.service_header, parent, false);
-            Service service = new Service(null);
+            TextView serviceName = (TextView) listItemView.findViewById(R.id.ServiceNameTV);
+            TextView servicePrice = (TextView) listItemView.findViewById(R.id.ServicePriceTV);
+
+            Log.d("Service price: ", service.getMinPirce() + "");
+
+            serviceName.setText(service.getName());
+            servicePrice.setText(service.getMinPirce() + " EUR");
+
+            // tuto treba pouzit service
         } else {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.service_element, parent, false);
 

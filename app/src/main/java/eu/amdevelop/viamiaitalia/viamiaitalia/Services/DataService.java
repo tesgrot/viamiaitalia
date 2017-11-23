@@ -41,7 +41,7 @@ public class DataService extends AsyncTask<String, Void, JSONArray> {
 
             Log.d("!!!!!!!!", " PRED CONNECTION CONNECT");
 
-//            connection.setRequestProperty("Authorization", "a5dbf60f");
+            connection.setRequestProperty("Authorization", "123456");
 
             //Connect to our url
             connection.connect();
