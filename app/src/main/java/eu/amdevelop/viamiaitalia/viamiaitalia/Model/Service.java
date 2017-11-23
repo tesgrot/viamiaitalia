@@ -1,5 +1,7 @@
 package eu.amdevelop.viamiaitalia.viamiaitalia.Model;
 
+import android.util.Log;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -18,7 +20,9 @@ public class Service {
 
     public Service(JSONObject obj) {
         try {
+            Log.d("Service class", obj.toString());
             this.id = obj.getInt(Keywords.ServiceKeywords.id.name());
+            this.minPirce = obj.getDouble(Keywords.ServiceKeywords.minimal_price.name());
             if (obj.has(Keywords.ServiceKeywords.service_c_s.name())) {
                 this.name = obj.getJSONObject(Keywords.ServiceKeywords.service_c_s.name()).getString(Keywords.ServiceKeywords.name.name());
                 this.description = obj.getJSONObject(Keywords.ServiceKeywords.service_c_s.name()).getString(Keywords.ServiceKeywords.description.name());
@@ -28,7 +32,7 @@ public class Service {
                 this.description = obj.getJSONObject(Keywords.ServiceKeywords.service_e_n.name()).getString(Keywords.ServiceKeywords.description.name());
                 this.descriptionLong = obj.getJSONObject(Keywords.ServiceKeywords.service_e_n.name()).getString(Keywords.ServiceKeywords.descriptionLong.name());
             }
-            this.minPirce = obj.getDouble(Keywords.ServiceKeywords.minimal_price.name());
+            Log.d("Service class min price", minPirce + "EUR");
         } catch (JSONException e) {
             e.printStackTrace();
         }

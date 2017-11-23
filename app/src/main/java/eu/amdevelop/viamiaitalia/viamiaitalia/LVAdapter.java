@@ -55,7 +55,7 @@ public class LVAdapter extends ArrayAdapter<ServiceElement> {
             TextView duration = (TextView) listItemView.findViewById(R.id.servItemDur);
 
             descLong.setText(current.getDescriptionLong());
-            price.setText(current.getPricePerson() + "");
+            price.setText(current.getPricePerson() + " EUR");
             duration.setText(current.getDuration() + " " + current.getDurationUnit());
 
         }
