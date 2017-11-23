@@ -29,10 +29,10 @@
                 style="@style/Header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Accommodation name"
-                android:textAlignment="center"
-                android:textSize="22sp" />
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp"
+                android:text="Accommodation Name"
+                 />
 
             <TableLayout
                 android:id="@+id/order_infoTL"
@@ -41,7 +41,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
                 android:stretchColumns="*">
 
                 <TableRow
@@ -167,9 +168,11 @@
 
             <LinearLayout
                 android:id="@+id/order_checkinoutLL"
-                android:layout_width="368dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:baselineAligned="false"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -178,7 +181,9 @@
                     android:layout_weight="1"
                     android:baselineAligned="false"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    >
 
                     <TextView
                         android:id="@+id/order_chin_dateTV"
@@ -186,7 +191,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="28/11/2017"
-                        android:textSize="20sp" />
+                        style="@style/Header"/>
 
                     <TextView
                         android:id="@+id/order_chin_timeTV"
@@ -194,15 +199,15 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="14:00"
-                        android:textSize="20sp" />
+                        style="@style/Subheader" />
 
                     <TextView
                         android:id="@+id/order_chinTV"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="check-in"
-                        android:textAllCaps="true" />
+                        android:text="Check In"
+                        style="@style/Subheader" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -212,7 +217,8 @@
                     android:baselineAligned="false"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
 
                     <TextView
                         android:id="@+id/order_chout_dateTV"
@@ -220,7 +226,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="4/12/2017"
-                        android:textSize="20sp" />
+                        style="@style/Header" />
 
                     <TextView
                         android:id="@+id/order_chout_timeTV"
@@ -228,15 +234,15 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="10:00"
-                        android:textSize="20sp" />
+                        style="@style/Subheader" />
 
                     <TextView
                         android:id="@+id/order_choutTV"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="check-out"
-                        android:textAllCaps="true" />
+                        android:text="Check Out"
+                        style="@style/Subheader" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -248,8 +254,9 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:text="Accommodation Information"
-                android:textAlignment="center"
-                android:textSize="22sp" />
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                />
 
             <TableLayout
                 android:id="@+id/order_accomm_infoTL"
@@ -258,7 +265,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
                 android:stretchColumns="*">
 
                 <TableRow
@@ -315,7 +323,9 @@
                 style="@style/DarkButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="See more about Accommodation" />
+                android:text="See more about Accommodation"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="24dp"/>
 
         </LinearLayout>
 
