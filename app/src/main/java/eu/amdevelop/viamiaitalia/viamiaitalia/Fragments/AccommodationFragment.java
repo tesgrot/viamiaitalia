@@ -4,6 +4,7 @@ package eu.amdevelop.viamiaitalia.viamiaitalia.Fragments;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -15,6 +16,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import eu.amdevelop.viamiaitalia.viamiaitalia.CustomMapView;
 import eu.amdevelop.viamiaitalia.viamiaitalia.R;
 
 
@@ -24,7 +26,7 @@ import eu.amdevelop.viamiaitalia.viamiaitalia.R;
 public class AccommodationFragment extends Fragment implements OnMapReadyCallback {
 
     private GoogleMap mGoogleMap;
-    private MapView mMapView;
+    private CustomMapView mMapView;
     private View mView;
     private boolean mapsSupported = true;
 
@@ -42,7 +44,7 @@ public class AccommodationFragment extends Fragment implements OnMapReadyCallbac
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mMapView = (MapView) mView.findViewById(R.id.mapView);
+        mMapView = (CustomMapView) mView.findViewById(R.id.mapView);
         if (mMapView != null) {
             mMapView.onCreate(null);
             mMapView.onResume();
@@ -60,4 +62,6 @@ public class AccommodationFragment extends Fragment implements OnMapReadyCallbac
         googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
+
+
 }

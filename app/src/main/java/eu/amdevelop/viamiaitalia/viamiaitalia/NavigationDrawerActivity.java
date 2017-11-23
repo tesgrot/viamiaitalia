@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 
 import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.AccommodationFragment;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.ContactFragment;
@@ -123,4 +124,5 @@ public class NavigationDrawerActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }
