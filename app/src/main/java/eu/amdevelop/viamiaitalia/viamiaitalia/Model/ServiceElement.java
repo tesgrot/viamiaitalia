@@ -11,21 +11,17 @@ public class ServiceElement {
     private int pricePerson, duration, id;
     private String durationUnit, descriptionLong;
 
-    public ServiceElement(int pricePerson, int duration, int id, String durationUnit, String descriptionLong) {
-        this.pricePerson = pricePerson;
-        this.duration = duration;
-        this.id = id;
-        this.durationUnit = durationUnit;
-        this.descriptionLong = descriptionLong;
-    }
-
     public ServiceElement(JSONObject obj) {
         try {
-            this.id = obj.getInt("id");
-            this.descriptionLong = obj.getJSONObject("service_element_c_s").getString("description_long");
-            this.duration = obj.getInt("duration");
-            this.durationUnit = obj.getString("duration_units");
-            this.pricePerson = obj.getInt("price_person");
+            this.id = obj.getInt(Keywords.ServiceElementKeywords.id.name());
+            if (obj.has(Keywords.ServiceElementKeywords.service_element_c_s.name())) {
+                this.descriptionLong = obj.getJSONObject(Keywords.ServiceElementKeywords.service_element_c_s.name()).getString(Keywords.ServiceElementKeywords.description_long.name());
+            } else {
+                this.descriptionLong = obj.getJSONObject(Keywords.ServiceElementKeywords.service_element_e_n.name()).getString(Keywords.ServiceElementKeywords.description_long.name());
+            }
+            this.duration = obj.getInt(Keywords.ServiceElementKeywords.duration.name());
+            this.durationUnit = obj.getString(Keywords.ServiceElementKeywords.duration_units.name());
+            this.pricePerson = obj.getInt(Keywords.ServiceElementKeywords.price_person.name());
         } catch (JSONException e) {
             e.printStackTrace();
         }

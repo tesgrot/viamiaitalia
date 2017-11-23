@@ -1,7 +1,5 @@
 package eu.amdevelop.viamiaitalia.viamiaitalia.Model;
 
-import android.util.Log;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -18,19 +16,19 @@ public class Service {
     private double minPirce;
     private String imageURL;
 
-
-    public Service() {
-
-    }
-
     public Service(JSONObject obj) {
-        Log.d("Service JSON OBJECT ", obj.toString() + "=======\n");
         try {
-            this.id = obj.getInt("id");
-            this.name = obj.getJSONObject("service_e_n").getString("name");
-            this.description = obj.getJSONObject("service_e_n").getString("description");
-            this.descriptionLong = obj.getJSONObject("service_e_n").getString("descriptionLong");
-            this.minPirce = obj.getDouble("minimal_price");
+            this.id = obj.getInt(Keywords.ServiceKeywords.id.name());
+            if (obj.has(Keywords.ServiceKeywords.service_c_s.name())) {
+                this.name = obj.getJSONObject(Keywords.ServiceKeywords.service_c_s.name()).getString(Keywords.ServiceKeywords.name.name());
+                this.description = obj.getJSONObject(Keywords.ServiceKeywords.service_c_s.name()).getString(Keywords.ServiceKeywords.description.name());
+                this.descriptionLong = obj.getJSONObject(Keywords.ServiceKeywords.service_c_s.name()).getString(Keywords.ServiceKeywords.descriptionLong.name());
+            } else {
+                this.name = obj.getJSONObject(Keywords.ServiceKeywords.service_e_n.name()).getString(Keywords.ServiceKeywords.name.name());
+                this.description = obj.getJSONObject(Keywords.ServiceKeywords.service_e_n.name()).getString(Keywords.ServiceKeywords.description.name());
+                this.descriptionLong = obj.getJSONObject(Keywords.ServiceKeywords.service_e_n.name()).getString(Keywords.ServiceKeywords.descriptionLong.name());
+            }
+            this.minPirce = obj.getDouble(Keywords.ServiceKeywords.minimal_price.name());
         } catch (JSONException e) {
             e.printStackTrace();
         }

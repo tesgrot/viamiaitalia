@@ -11,11 +11,22 @@ public class Keywords {
     }
 
     public enum ServiceKeywords {
+        id, service_e_n, service_c_s, name, description, descriptionLong, minimal_price
 
     }
 
-    public enum OrderKeywords {
+    public enum ServiceElementKeywords {
+        id, service_element_c_s, service_element_e_n, description_long, duration, duration_units, price_person
+    }
 
+    public enum OrderKeywords {
+        id, name, mail, phone
+//            TODO dokoncit
+    }
+
+    public enum AccommodationKeywords {
+        id, name, description, descriptionLong
+//            TODO dokoncit
     }
 
 }
