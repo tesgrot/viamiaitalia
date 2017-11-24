@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Accommodation;
+import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Apartment;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Contact;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Order;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Service;
@@ -182,6 +183,29 @@ public class DataManager {
         return null;
     }
 
+    public ArrayList<Apartment> getApartments(int id) {
+        destroyInstance();
+
+        ArrayList<Apartment> apartments = new ArrayList<>();
+        try {
+            JSONArray jsonArray = dataService.execute(IP_ADDRESS + "accommodation/" + id + "/apartments").get();
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObj = jsonArray.getJSONObject(i);
+                Apartment apartment = new Apartment(jsonObj);
+                apartments.add(apartment);
+            }
+            return apartments;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return apartments;
+    }
+
+
     public Contact getContact() {
         destroyInstance();
 
@@ -224,7 +248,7 @@ public class DataManager {
         JSONArray test;
         boolean success = true;
         try {
-            test = dataService.execute(IP_ADDRESS + "me").get(); //TODO me
+            test = dataService.execute(IP_ADDRESS + "me").get();
             if (test == null) success = false;
         } catch (InterruptedException e) {
             e.printStackTrace();
