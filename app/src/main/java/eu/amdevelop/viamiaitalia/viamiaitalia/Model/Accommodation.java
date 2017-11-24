@@ -55,7 +55,18 @@ public class Accommodation {
             this.longitude = obj.getInt(Keywords.AccommodationKeywords.longitude.name());
             this.noBath = obj.getInt(Keywords.AccommodationKeywords.no_of_bathrooms.name());
             this.noBed = obj.getInt(Keywords.AccommodationKeywords.no_of_bedrooms.name());
-            //TODO CHECKIN CHECKOUT
+            check_in = obj.getString(Keywords.AccommodationKeywords.check_in.name());
+            check_out = obj.getString(Keywords.AccommodationKeywords.check_out.name());
+            String chIn = "";
+            for (int i = 11; i < 16; i++) {
+                chIn += check_in.charAt(i);
+            }
+            String chOut = "";
+            for (int i = 11; i < 16; i++) {
+                chOut += check_out.charAt(i);
+            }
+            this.check_in = chIn;
+            this.check_out = chOut;
         } catch (JSONException e) {
             e.printStackTrace();
         }
