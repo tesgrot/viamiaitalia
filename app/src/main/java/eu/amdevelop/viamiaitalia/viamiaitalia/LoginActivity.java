@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide;
 
 import eu.amdevelop.viamiaitalia.viamiaitalia.Services.DataManager;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Services.DataService;
+import io.paperdb.Paper;
 
 /**
  * A login screen that offers login via email/password.
@@ -29,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_login);
 
         dataManager = DataManager.getInstance();

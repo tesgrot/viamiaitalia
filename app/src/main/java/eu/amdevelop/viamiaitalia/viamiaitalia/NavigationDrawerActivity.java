@@ -17,6 +17,7 @@ import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.ContactFragment;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.OrderFragment;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.ServicesFragment;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.WineFragment;
+import io.paperdb.Paper;
 
 public class NavigationDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -28,6 +29,10 @@ public class NavigationDrawerActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        Paper.init(this);
+
         setContentView(R.layout.activity_navigation_drawer);
 
         OrderFragment orderFragment = new OrderFragment();

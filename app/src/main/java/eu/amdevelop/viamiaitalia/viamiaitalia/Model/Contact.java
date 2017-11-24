@@ -7,7 +7,7 @@ import org.json.JSONObject;
  * Created by terezamadova on 08/11/2017.
  */
 
-public class Contact {
+public class Contact implements java.io.Serializable {
 
     private String address;
     private int houseNo;
