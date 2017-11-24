@@ -9,13 +9,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Accommodation;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Order;
 import eu.amdevelop.viamiaitalia.viamiaitalia.R;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Services.DataManager;
 
 public class OrderFragment extends Fragment {
 
-    TextView name, mail, phone, noOfPpl, noOfChildren, checkInTime, checkInDate, checkOutTime, checkOutDate, accommName, accommApart;
+    TextView header, name, mail, phone, noOfPpl, noOfChildren, checkInTime, checkInDate, checkOutTime, checkOutDate, accommName, accommApart;
     Button accommBtn;
 
     public OrderFragment() {
@@ -29,6 +30,7 @@ public class OrderFragment extends Fragment {
 
         getActivity().setTitle("Your Order");
 
+        header = (TextView) view.findViewById(R.id.order_headerTV);
         name = (TextView) view.findViewById(R.id.order_info_nameTV);
         mail = (TextView) view.findViewById(R.id.order_info_mailTV);
         phone = (TextView) view.findViewById(R.id.order_info_phoneTV);
@@ -58,9 +60,21 @@ public class OrderFragment extends Fragment {
         });
 
         try {
-            Order order = getDataSet();
+//            Order order = getOrderDataSet(); TODO ked bude api tak toto dat
+            Order order = new Order();
+            Accommodation accommodation = getAccommodationrDataSet(order.getId());
 
-//            name.setText();
+            header.setText(accommodation.getName());
+            name.setText(order.getName());
+            mail.setText(order.getMail());
+            phone.setText(order.getPhone());
+            noOfPpl.setText(order.getNoOfPeople() + "");
+            noOfChildren.setText(order.getNoOfChildren() + "");
+            checkInDate.setText(order.getCheckIn());
+            checkOutDate.setText(order.getCheckOut());
+            checkInTime.setText(accommodation.getCheck_in());
+            checkOutTime.setText(accommodation.getCheck_out());
+            accommName.setText(accommodation.getName());
 
         } catch (NullPointerException e) {
             e.printStackTrace();
@@ -69,8 +83,13 @@ public class OrderFragment extends Fragment {
         return view;
     }
 
-    private Order getDataSet() {
+    private Order getOrderDataSet() {
         Order results = DataManager.getInstance().getOrder();
+        return results;
+    }
+
+    private Accommodation getAccommodationrDataSet(int id) {
+        Accommodation results = DataManager.getInstance().getAccommodation(id);
         return results;
     }
 

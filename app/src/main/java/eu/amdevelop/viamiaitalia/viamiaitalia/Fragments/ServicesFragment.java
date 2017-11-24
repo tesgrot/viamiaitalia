@@ -24,7 +24,7 @@ import eu.amdevelop.viamiaitalia.viamiaitalia.Services.DataManager;
 public class ServicesFragment extends Fragment {
 
     RecyclerView rv;
-
+    ArrayList<Service> services;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
 
@@ -42,7 +42,7 @@ public class ServicesFragment extends Fragment {
         adapter = new RVAdapter(getDataSet());
         rv.setAdapter(adapter);
 
-        ArrayList<Service> services = getDataSet();
+        services = getDataSet();
         Log.d("Services: (onCreate) ", services.toString());
 
         return view;
@@ -55,7 +55,10 @@ public class ServicesFragment extends Fragment {
                 .MyClickListener() {
             @Override
             public void onItemClick(int position, View v) {
-                Log.i("Services Fragment: ", " Clicked on Item " + position);
+
+                int serviceID = services.get(position).getId();
+
+                Log.i("Services Fragment: ", " Clicked on Item with id " + serviceID);
 
                 WineFragment wineFragment = new WineFragment();
 

@@ -23,11 +23,11 @@ public class Service {
             if (obj.has(Keywords.ServiceKeywords.service_c_s.name())) {
                 this.name = obj.getJSONObject(Keywords.ServiceKeywords.service_c_s.name()).getString(Keywords.ServiceKeywords.name.name());
                 this.description = obj.getJSONObject(Keywords.ServiceKeywords.service_c_s.name()).getString(Keywords.ServiceKeywords.description.name());
-                this.descriptionLong = obj.getJSONObject(Keywords.ServiceKeywords.service_c_s.name()).getString(Keywords.ServiceKeywords.descriptionLong.name());
+                this.descriptionLong = obj.getJSONObject(Keywords.ServiceKeywords.service_c_s.name()).getString(Keywords.ServiceKeywords.description_long.name());
             } else {
                 this.name = obj.getJSONObject(Keywords.ServiceKeywords.service_e_n.name()).getString(Keywords.ServiceKeywords.name.name());
                 this.description = obj.getJSONObject(Keywords.ServiceKeywords.service_e_n.name()).getString(Keywords.ServiceKeywords.description.name());
-                this.descriptionLong = obj.getJSONObject(Keywords.ServiceKeywords.service_e_n.name()).getString(Keywords.ServiceKeywords.descriptionLong.name());
+                this.descriptionLong = obj.getJSONObject(Keywords.ServiceKeywords.service_e_n.name()).getString(Keywords.ServiceKeywords.description_long.name());
             }
         } catch (JSONException e) {
             e.printStackTrace();
