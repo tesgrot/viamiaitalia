@@ -1,21 +1,10 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:isScrollContainer="true"
     tools:context="eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.AccommodationFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <!--<TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />-->
-
-    <!--<com.google.android.gms.maps.MapView
-        android:id="@+id/map"
-        android:layout_width="match_parent"
-        android:layout_height="300dp" />-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -34,7 +23,7 @@
                 android:src="@android:drawable/screen_background_dark_transparent" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/accommodation_name"
                 style="@style/Header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -42,6 +31,7 @@
                 android:text="Villa Mare" />
 
             <TextView
+                android:id="@+id/accommodation_area"
                 style="@style/Subheader"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -49,6 +39,7 @@
                 android:text="Tuscany" />
 
             <TextView
+                android:id="@+id/accommodation_desc_long"
                 style="@style/Paragraph"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -70,14 +61,13 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView3"
+                        android:id="@+id/accommodation_bathr_no"
                         style="@style/Header"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="4" />
 
                     <TextView
-                        android:id="@+id/textView7"
                         style="@style/Subheader"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -91,14 +81,13 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/accommodation_bedr_no"
                         style="@style/Header"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="2" />
 
                     <TextView
-                        android:id="@+id/textView8"
                         style="@style/Subheader"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -129,21 +118,21 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/address_text_1"
+                        android:id="@+id/address"
                         style="@style/Paragraph"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="TextView" />
 
-                    <TextView
+                    <!--<TextView
                         android:id="@+id/address_text_2"
                         style="@style/Paragraph"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="TextView" />-->
 
                     <TextView
-                        android:id="@+id/address_text_3"
+                        android:id="@+id/address_gps"
                         style="@style/Paragraph"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
