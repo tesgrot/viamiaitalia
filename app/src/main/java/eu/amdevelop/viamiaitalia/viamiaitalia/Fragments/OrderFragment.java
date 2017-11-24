@@ -9,30 +9,17 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Contact;
+import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Order;
 import eu.amdevelop.viamiaitalia.viamiaitalia.R;
-import eu.amdevelop.viamiaitalia.viamiaitalia.Services.DataService;
-//import eu.amdevelop.viamiaitalia.viamiaitalia.Services.DataService;
+import eu.amdevelop.viamiaitalia.viamiaitalia.Services.DataManager;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class OrderFragment extends Fragment {
 
-    public Contact contact;
-    public DataService dataService;
-
-
-    TextView texticek;
-
-    Button btn;
+    TextView name, mail, phone, noOfPpl, noOfChildren, checkInTime, checkInDate, checkOutTime, checkOutDate, accommName, accommApart;
+    Button accommBtn;
 
     public OrderFragment() {
-        dataService = new DataService();
-        // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,21 +27,22 @@ public class OrderFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_order, container, false);
 
-
         getActivity().setTitle("Your Order");
 
-//        HTTPRequest request = new HTTPRequest();
-//        texticek = view.findViewById(R.id.textView2);
-//        request.execute("http:fjweoj");
-        // Inflate the layout for this fragment
+        name = (TextView) view.findViewById(R.id.order_info_nameTV);
+        mail = (TextView) view.findViewById(R.id.order_info_mailTV);
+        phone = (TextView) view.findViewById(R.id.order_info_phoneTV);
+        noOfPpl = (TextView) view.findViewById(R.id.order_info_nopplTV);
+        noOfChildren = (TextView) view.findViewById(R.id.order_info_nochTV);
+        checkInDate = (TextView) view.findViewById(R.id.order_chin_dateTV);
+        checkInTime = (TextView) view.findViewById(R.id.order_chin_timeTV);
+        checkOutDate = (TextView) view.findViewById(R.id.order_chout_dateTV);
+        checkOutTime = (TextView) view.findViewById(R.id.order_chout_timeTV);
+        accommName = (TextView) view.findViewById(R.id.order_ainfo_accommTV);
+        accommApart = (TextView) view.findViewById(R.id.order_ainfo_apartTV);
+        accommBtn = (Button) view.findViewById(R.id.order_accommBtn);
 
-
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-        btn = (Button) view.findViewById(R.id.order_accommBtn);
-        btn.setOnClickListener(new OnClickListener() {
-
+        accommBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 AccommodationFragment accommodationFragment = new AccommodationFragment();
@@ -66,32 +54,21 @@ public class OrderFragment extends Fragment {
             }
         });
 
+        try {
+            Order order = getDataSet();
+
+//            name.setText();
+
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+
         return view;
     }
 
-//    class HTTPRequest extends AsyncTask<String, Void, Object> {
-//
-//        @Override
-//        protected void onPreExecute() {
-//            super.onPreExecute();
-////            texticek.setText("Ahoj adamko ja som tu");
-//        }
-//
-//
-//        @Override
-//        protected Object doInBackground(String... strings) {
-////            texticek.setText("Ahojkajte");
-//            return null;
-//        }
-//
-//        @Override
-//        protected void onPostExecute(Object o) {
-//            super.onPostExecute(o);
-//        }
-//    }
-//
-//
-
-
+    private Order getDataSet() {
+        Order results = DataManager.getInstance().getOrder();
+        return results;
+    }
 
 }

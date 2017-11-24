@@ -108,7 +108,7 @@
 
         </LinearLayout>
 
-        <com.google.android.gms.maps.MapView
+        <eu.amdevelop.viamiaitalia.viamiaitalia.CustomMapView
             android:id="@+id/mapView"
             android:layout_width="match_parent"
             android:layout_height="200dp" />

@@ -13,16 +13,9 @@ import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Contact;
 import eu.amdevelop.viamiaitalia.viamiaitalia.R;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Services.DataManager;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class ContactFragment extends Fragment {
 
-    TextView name;
-    TextView phone;
-    TextView mail;
-    TextView address;
+    TextView name, phone, mail, address;
 
     public ContactFragment() {
     }
@@ -41,23 +34,20 @@ public class ContactFragment extends Fragment {
         address = (TextView) view.findViewById(R.id.contact_address);
         try {
             Contact contact = getDataSet();
-            Log.d("onCreat from getDataSet", contact.toString());
+            Log.d("onCreate getDataSet", contact.toString());
 
             name.setText(contact.getContactPerson());
             phone.setText(contact.getPhone());
             mail.setText(contact.getEmail());
-            address.setText(contact.getAddress()); //TODO treba adresu poskladat z street+no+city
+            address.setText(contact.getAddress() + " " + contact.getHouseNo() + " " + contact.getCity());
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
-
-
         return view;
     }
 
     private Contact getDataSet() {
         Contact results = DataManager.getInstance().getContact();
-        Log.d("Contact (getDataSet): ", results.toString());
         return results;
     }
 

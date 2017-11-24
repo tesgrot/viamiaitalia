@@ -20,21 +20,23 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_navigation_drawer"
-        app:menu="@menu/activity_navigation_drawer_drawer">
+        app:menu="@menu/activity_navigation_drawer_drawer"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clickable="false"
             android:gravity="bottom"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
             <TextView
                 android:id="@+id/log_out"
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
                 android:clickable="true"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/poppins_light"
                 android:gravity="center"
                 android:text="Log out"
                 android:textColor="#b2b2b2" />
@@ -44,6 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="26dp"
                 android:clickable="false"
+                android:fontFamily="@font/poppins_light"
                 android:gravity="center"
                 android:text="v1.0.0" />
         </LinearLayout>
