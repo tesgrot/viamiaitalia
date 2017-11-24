@@ -27,54 +27,23 @@ public class ServiceElement {
         }
     }
 
-    @Override
-    public String toString() {
-        return "ServiceElement{" +
-                "pricePerson=" + pricePerson +
-                ", duration=" + duration +
-                ", id=" + id +
-                ", durationUnit='" + durationUnit + '\'' +
-                ", descriptionLong='" + descriptionLong + '\'' +
-                '}';
-    }
-
     public int getPricePerson() {
         return pricePerson;
-    }
-
-    public void setPricePerson(int pricePerson) {
-        this.pricePerson = pricePerson;
     }
 
     public int getDuration() {
         return duration;
     }
 
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getDurationUnit() {
         return durationUnit;
     }
 
-    public void setDurationUnit(String durationUnit) {
-        this.durationUnit = durationUnit;
-    }
-
     public String getDescriptionLong() {
         return descriptionLong;
-    }
-
-    public void setDescriptionLong(String descriptionLong) {
-        this.descriptionLong = descriptionLong;
     }
 }

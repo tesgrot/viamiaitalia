@@ -9,7 +9,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Accommodation;
+import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Apartment;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Order;
 import eu.amdevelop.viamiaitalia.viamiaitalia.R;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Services.DataManager;
@@ -63,6 +66,7 @@ public class OrderFragment extends Fragment {
 //            Order order = getOrderDataSet(); TODO ked bude api tak toto dat
             Order order = new Order();
             Accommodation accommodation = getAccommodationrDataSet(order.getId());
+            ArrayList<Apartment> apartments = getApartmentsDataSet(accommodation.getId());
 
             header.setText(accommodation.getName());
             name.setText(order.getName());
@@ -75,6 +79,15 @@ public class OrderFragment extends Fragment {
             checkInTime.setText(accommodation.getCheck_in());
             checkOutTime.setText(accommodation.getCheck_out());
             accommName.setText(accommodation.getName());
+
+            String apartmentsString = "";
+            for (int i = 0; i < apartments.size(); i++) {
+                apartmentsString += apartments.get(i).getName();
+                if (i < apartments.size() - 1) {
+                    apartmentsString += "\n";
+                }
+            }
+            accommApart.setText(apartmentsString);
 
         } catch (NullPointerException e) {
             e.printStackTrace();
@@ -90,6 +103,11 @@ public class OrderFragment extends Fragment {
 
     private Accommodation getAccommodationrDataSet(int id) {
         Accommodation results = DataManager.getInstance().getAccommodation(id);
+        return results;
+    }
+
+    private ArrayList<Apartment> getApartmentsDataSet(int id) {
+        ArrayList<Apartment> results = DataManager.getInstance().getApartments(id);
         return results;
     }
 

@@ -13,9 +13,8 @@ import java.util.ArrayList;
 public class Accommodation {
 
     int id, noBed, noBath, minPrice;
-    String name, description, descriptionLong, reccommend1, reccommend2, reccommend3, note, address;
+    String name, description, descriptionLong, reccommend1, reccommend2, reccommend3, note, address, check_in, check_out;
     double latitude, longitude;
-    String check_in, check_out; // TODO overit aky typ to je
     ArrayList<City> cities;
 
 
@@ -76,156 +75,74 @@ public class Accommodation {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getDescriptionLong() {
-        return descriptionLong;
-    }
-
-    public void setDescriptionLong(String descriptionLong) {
-        this.descriptionLong = descriptionLong;
-    }
-
-    public String getReccommend1() {
-        return reccommend1;
-    }
-
-    public void setReccommend1(String reccommend1) {
-        this.reccommend1 = reccommend1;
-    }
-
-    public String getReccommend2() {
-        return reccommend2;
-    }
-
-    public void setReccommend2(String reccommend2) {
-        this.reccommend2 = reccommend2;
-    }
-
-    public String getReccommend3() {
-        return reccommend3;
-    }
-
-    public void setReccommend3(String reccommend3) {
-        this.reccommend3 = reccommend3;
-    }
-
-    public String getNote() {
-        return note;
-    }
-
-    public void setNote(String note) {
-        this.note = note;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
-    }
-
-    public String getCheck_in() {
-        return check_in;
-    }
-
-    public void setCheck_in(String check_in) {
-        this.check_in = check_in;
-    }
-
-    public String getCheck_out() {
-        return check_out;
-    }
-
-    public void setCheck_out(String check_out) {
-        this.check_out = check_out;
-    }
-
-    public ArrayList<City> getCities() {
-        return cities;
-    }
-
-    public void setCities(ArrayList<City> cities) {
-        this.cities = cities;
-    }
-
-
     public int getNoBed() {
         return noBed;
-    }
-
-    public void setNoBed(int noBed) {
-        this.noBed = noBed;
     }
 
     public int getNoBath() {
         return noBath;
     }
 
-    public void setNoBath(int noBath) {
-        this.noBath = noBath;
+    public int getMinPrice() {
+        return minPrice;
     }
 
-    @Override
-    public String toString() {
-        return "Accommodation{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", descriptionLong='" + descriptionLong + '\'' +
-                ", reccommend1='" + reccommend1 + '\'' +
-                ", reccommend2='" + reccommend2 + '\'' +
-                ", reccommend3='" + reccommend3 + '\'' +
-                ", note='" + note + '\'' +
-                ", address='" + address + '\'' +
-                ", latitude=" + latitude +
-                ", longitude=" + longitude +
-                ", check_in='" + check_in + '\'' +
-                ", check_out='" + check_out + '\'' +
-                ", cities=" + cities +
-                '}';
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getDescriptionLong() {
+        return descriptionLong;
+    }
+
+    public String getReccommend1() {
+        return reccommend1;
+    }
+
+    public String getReccommend2() {
+        return reccommend2;
+    }
+
+    public String getReccommend3() {
+        return reccommend3;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public String getCheck_in() {
+        return check_in;
+    }
+
+    public String getCheck_out() {
+        return check_out;
+    }
+
+    public ArrayList<City> getCities() {
+        return cities;
     }
 
     public class City {
 
-        int id;
+        int id, distance;
         String cityEN, cityCS;
-        int distance;
 
         public City(int id, String cityEN, String cityCS, int distance) {
             this.id = id;
@@ -238,43 +155,16 @@ public class Accommodation {
             return id;
         }
 
-        public void setId(int id) {
-            this.id = id;
+        public int getDistance() {
+            return distance;
         }
 
         public String getCityEN() {
             return cityEN;
         }
 
-        public void setCityEN(String cityEN) {
-            this.cityEN = cityEN;
-        }
-
         public String getCityCS() {
             return cityCS;
         }
-
-        public void setCityCS(String cityCS) {
-            this.cityCS = cityCS;
-        }
-
-        public int getDistance() {
-            return distance;
-        }
-
-        public void setDistance(int distance) {
-            this.distance = distance;
-        }
-
-        @Override
-        public String toString() {
-            return "City{" +
-                    "id=" + id +
-                    ", cityEN='" + cityEN + '\'' +
-                    ", cityCS='" + cityCS + '\'' +
-                    ", distance=" + distance +
-                    '}';
-        }
     }
-
 }

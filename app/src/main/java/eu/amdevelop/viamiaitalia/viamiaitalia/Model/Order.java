@@ -10,8 +10,7 @@ import org.json.JSONObject;
 public class Order {
 
     int id, noOfPeople, noOfChildren;
-    String name, mail, phone;
-    String checkIn, checkOut; // asi nepridu dates ale Stringy??
+    String name, mail, phone, checkIn, checkOut;
 
     public Order() {
         this.id = 1;

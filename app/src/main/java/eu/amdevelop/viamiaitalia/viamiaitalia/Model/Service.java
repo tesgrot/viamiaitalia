@@ -10,11 +10,8 @@ import org.json.JSONObject;
 public class Service {
 
     private int id;
-    private String name;
-    private String description;
-    private String descriptionLong;
+    private String name, description, descriptionLong, imageURL;
     private double minPirce;
-    private String imageURL;
 
     public Service(JSONObject obj) {
         try {
@@ -42,51 +39,19 @@ public class Service {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getDescriptionLong() {
         return descriptionLong;
     }
 
-    public void setDescriptionLong(String descriptionLong) {
-        this.descriptionLong = descriptionLong;
-    }
-
-    public double getMinPirce() {
-        return minPirce;
-    }
-
-    public void setMinPirce(double minPirce) {
-        this.minPirce = minPirce;
-    }
-
     public String getImageURL() {
         return imageURL;
     }
 
-    public void setImageURL(String imageURL) {
-        this.imageURL = imageURL;
-    }
-
-    @Override
-    public String toString() {
-        return "Service{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", descriptionLong='" + descriptionLong + '\'' +
-                ", minPirce=" + minPirce +
-                ", imageURL='" + imageURL + '\'' +
-                '}';
+    public double getMinPirce() {
+        return minPirce;
     }
 }

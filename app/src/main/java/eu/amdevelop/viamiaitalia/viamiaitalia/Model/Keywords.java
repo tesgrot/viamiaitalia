@@ -33,9 +33,9 @@ public class Keywords {
         no_of_bathrooms, no_of_bedrooms
     }
 
-    public enum AppartmentKeywords {
-        id, appartment_e_n, appartment_c_s, name, description, note, no_of_single_beds, no_of_double_beds,
-        no_of_persons, has_internet_connection, has_own_bathroom
+    public enum ApartmentKeywords {
+        id, apartment_e_n, apartment_c_s, name, description, note, no_of_single_beds, no_of_double_beds,
+        no_of_persons, internet_connection, own_bathroom
     }
 
 }
