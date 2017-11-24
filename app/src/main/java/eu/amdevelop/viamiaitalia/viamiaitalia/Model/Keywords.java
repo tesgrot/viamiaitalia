@@ -12,7 +12,7 @@ public class Keywords {
     }
 
     public enum ServiceKeywords {
-        id, minimal_price, service_e_n, service_c_s, name, description, descriptionLong
+        id, minimal_price, service_e_n, service_c_s, name, description, description_long
 
     }
 
