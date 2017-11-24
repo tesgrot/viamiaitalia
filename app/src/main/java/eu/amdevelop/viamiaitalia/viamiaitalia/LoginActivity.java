@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(LoginActivity.this, NavigationDrawerActivity.class);
                     startActivity(intent);
                 } else
-                    Toast.makeText(LoginActivity.this, "YOU Ntered wrong code-" + code, Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "You entered incorrect code" + code, Toast.LENGTH_LONG).show();
             }
         });
     }

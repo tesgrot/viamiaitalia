@@ -136,7 +136,7 @@ public class DataManager {
         JSONArray test;
         boolean success = true;
         try {
-            test = dataService.execute(IP_ADDRESS + "services").get(); //TODO me
+            test = dataService.execute(IP_ADDRESS + "me").get(); //TODO me
             if (test == null) success = false;
         } catch (InterruptedException e) {
             e.printStackTrace();
