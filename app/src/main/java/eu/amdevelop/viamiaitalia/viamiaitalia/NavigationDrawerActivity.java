@@ -11,11 +11,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.concurrent.ExecutionException;
+
 import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.AccommodationFragment;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.ContactFragment;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.OrderFragment;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.ServicesFragment;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.WineFragment;
+import eu.amdevelop.viamiaitalia.viamiaitalia.Services.ConnectionCheck;
 import io.paperdb.Paper;
 
 public class NavigationDrawerActivity extends AppCompatActivity
@@ -24,6 +27,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
     NavigationView navigationView = null;
     Toolbar toolbar = null;
+    private ConnectionCheck connectionCheck = new ConnectionCheck();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,45 +90,111 @@ public class NavigationDrawerActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_order) {
+//            try {
+//                Boolean connectionIsOn = connectionCheck.execute().get();
+//                if (connectionIsOn.booleanValue() || Paper.exist("Order")) {
 
-            OrderFragment orderFragment = new OrderFragment();
-            android.support.v4.app.FragmentTransaction fragmentTransaction =
-                    getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container, orderFragment);
-            fragmentTransaction.commit();
+                    OrderFragment orderFragment = new OrderFragment();
+                    android.support.v4.app.FragmentTransaction fragmentTransaction =
+                            getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.fragment_container, orderFragment);
+                    fragmentTransaction.commit();
+
+//                }
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            } catch (ExecutionException e) {
+//                e.printStackTrace();
+//            }
+//            connectionCheck = null;
+//            connectionCheck = new ConnectionCheck();
         } else if (id == R.id.nav_accommodation) {
-            AccommodationFragment accommodationFragment = new AccommodationFragment();
-            Bundle bdl = new Bundle(1);
-            bdl.putInt("POSITION", 1); //TODO getnut index pre accommodation
-            accommodationFragment.setArguments(bdl);
-            android.support.v4.app.FragmentTransaction fragmentTransaction =
-                    getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container, accommodationFragment);
-            fragmentTransaction.commit();
+            try {
+                Boolean connectionIsOn = connectionCheck.execute().get();
+                if (connectionIsOn.booleanValue() || Paper.exist("Accommodation")) {
 
+                    AccommodationFragment accommodationFragment = new AccommodationFragment();
+                    Bundle bdl = new Bundle(1);
+                    bdl.putInt("POSITION", 1); //TODO getnut index pre accommodation
+                    accommodationFragment.setArguments(bdl);
+                    android.support.v4.app.FragmentTransaction fragmentTransaction =
+                            getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.fragment_container, accommodationFragment);
+                    fragmentTransaction.commit();
+
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+            connectionCheck = null;
+            connectionCheck = new ConnectionCheck();
         } else if (id == R.id.nav_services) {
-            ServicesFragment servicesFragment = new ServicesFragment();
-            android.support.v4.app.FragmentTransaction fragmentTransaction =
-                    getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container, servicesFragment);
-            fragmentTransaction.commit();
+            try {
+                Boolean connectionIsOn = connectionCheck.execute().get();
+                if (connectionIsOn.booleanValue() || Paper.exist("Services")) {
+
+                    ServicesFragment servicesFragment = new ServicesFragment();
+                    android.support.v4.app.FragmentTransaction fragmentTransaction =
+                            getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.fragment_container, servicesFragment);
+                    fragmentTransaction.commit();
+
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+            connectionCheck = null;
+            connectionCheck = new ConnectionCheck();
+
+
 
         } else if (id == R.id.nav_wine) {
-            WineFragment wineFragment = new WineFragment();
-            Bundle bdl = new Bundle(1);
-            bdl.putInt("POSITION", 1);
-            wineFragment.setArguments(bdl);
-            android.support.v4.app.FragmentTransaction fragmentTransaction =
-                    getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container, wineFragment);
-            fragmentTransaction.commit();
+            try {
+                Boolean connectionIsOn = connectionCheck.execute().get();
+                if (connectionIsOn.booleanValue() || Paper.exist("ServiceElements_1")) {
 
+                    WineFragment wineFragment = new WineFragment();
+                    Bundle bdl = new Bundle(1);
+                    bdl.putInt("POSITION", 1);
+                    wineFragment.setArguments(bdl);
+                    android.support.v4.app.FragmentTransaction fragmentTransaction =
+                            getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.fragment_container, wineFragment);
+                    fragmentTransaction.commit();
+
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+            connectionCheck = null;
+            connectionCheck = new ConnectionCheck();
         } else if (id == R.id.nav_contacts) {
-            ContactFragment contactFragment = new ContactFragment();
-            android.support.v4.app.FragmentTransaction fragmentTransaction =
-                    getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container, contactFragment);
-            fragmentTransaction.commit();
+            try {
+                Boolean connectionIsOn = connectionCheck.execute().get();
+                if (connectionIsOn.booleanValue() || Paper.exist("Contact")) {
+
+
+                    ContactFragment contactFragment = new ContactFragment();
+                    android.support.v4.app.FragmentTransaction fragmentTransaction =
+                            getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.fragment_container, contactFragment);
+                    fragmentTransaction.commit();
+
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+            connectionCheck = null;
+            connectionCheck = new ConnectionCheck();
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

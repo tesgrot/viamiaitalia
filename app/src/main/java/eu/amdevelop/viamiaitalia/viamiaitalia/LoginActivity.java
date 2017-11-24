@@ -31,6 +31,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Paper.init(this);
+
         setContentView(R.layout.activity_login);
 
         dataManager = DataManager.getInstance();
