@@ -155,9 +155,23 @@ public class DataManager {
         destroyInstance();
 
         try {
-            JSONObject jsonObject = dataService.execute(IP_ADDRESS + "accommodation/" + id).get().getJSONObject(0);
-            Accommodation accommodation = new Accommodation(jsonObject);
-            return accommodation;
+
+            Log.d("XXX", "getContact: zaciname");
+            Boolean connectionIsOn = connectionCheck.execute().get();
+            if (connectionIsOn.booleanValue()) {
+                Log.d("XXX", "getContact: net available");
+                JSONObject jsonObject = dataService.execute(IP_ADDRESS + "accommodation/" + id).get().getJSONObject(0);
+                Accommodation accommodation = new Accommodation(jsonObject);
+                Paper.book().delete("Accommodation");
+                Paper.book().write("Accommodation", accommodation);
+                return accommodation;
+            }
+            else {
+                Log.d("XXX", "getContact: no net");
+                Accommodation accommodation = Paper.book().read("Accommodation");
+                return accommodation;
+            }
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
