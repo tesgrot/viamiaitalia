@@ -8,7 +8,6 @@
     android:orientation="vertical"
     tools:context="eu.amdevelop.viamiaitalia.viamiaitalia.LoginActivity">
 
-    <!-- Login progress -->
     <ProgressBar
         android:id="@+id/login_progress"
         style="?android:attr/progressBarStyleLarge"
@@ -44,7 +43,6 @@
                 android:layout_marginTop="-50dp"
                 android:background="@drawable/logo_circle"
                 android:padding="50dp" />
-
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"

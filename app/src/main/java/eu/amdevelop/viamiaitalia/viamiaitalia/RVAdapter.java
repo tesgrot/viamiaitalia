@@ -1,7 +1,6 @@
 package eu.amdevelop.viamiaitalia.viamiaitalia;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,7 +73,6 @@ public class RVAdapter extends RecyclerView
             super(itemView);
             service_name = (TextView) itemView.findViewById(R.id.service_name);
             service_description = (TextView) itemView.findViewById(R.id.service_description);
-            Log.i("RVAdapter", "Adding Listener");
             itemView.setOnClickListener(this);
         }
 

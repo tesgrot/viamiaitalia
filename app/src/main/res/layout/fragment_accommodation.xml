@@ -9,7 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <LinearLayout
             android:id="@+id/linlay"
             android:layout_width="match_parent"
@@ -124,13 +123,6 @@
                         android:layout_height="wrap_content"
                         android:text="TextView" />
 
-                    <!--<TextView
-                        android:id="@+id/address_text_2"
-                        style="@style/Paragraph"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TextView" />-->
-
                     <TextView
                         android:id="@+id/address_gps"
                         style="@style/Paragraph"
@@ -165,7 +157,6 @@
                         android:textAlignment="center" />
                 </LinearLayout>
             </LinearLayout>
-
 
         </LinearLayout>
     </ScrollView>

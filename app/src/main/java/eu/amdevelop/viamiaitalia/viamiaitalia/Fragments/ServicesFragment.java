@@ -5,13 +5,10 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-
-import org.json.JSONException;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -35,6 +32,7 @@ public class ServicesFragment extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     private ViewGroup container;
     private ConnectionCheck connectionCheck = new ConnectionCheck();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -50,7 +48,6 @@ public class ServicesFragment extends Fragment {
         rv.setAdapter(adapter);
 
         services = getDataSet();
-        Log.d("Services: (onCreate) ", services.toString());
 
         return view;
     }
@@ -65,8 +62,6 @@ public class ServicesFragment extends Fragment {
 
                 int serviceID = services.get(position).getId();
 
-//                Log.i("Services Fragment: ", " Clicked on Item with id " + serviceID);
-
                 try {
                     Boolean connectionIsOn = connectionCheck.execute().get();
                     if (connectionIsOn.booleanValue() || Paper.exist("ServiceElements_" + serviceID)) {
@@ -76,19 +71,14 @@ public class ServicesFragment extends Fragment {
                         bdl.putInt("POSITION", position);
                         wineFragment.setArguments(bdl);
 
-//                wineFragment.setPosition(position);
-
                         android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
                         android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.fragment_container, wineFragment);
                         fragmentTransaction.addToBackStack(null);
                         fragmentTransaction.commit();
+                    } else {
+                        Toast.makeText(container.getContext(), "No connection", Toast.LENGTH_SHORT).show();
                     }
-                    else {
-                        Toast.makeText(container.getContext(), "no no no", Toast.LENGTH_LONG).show();
-                    }
-
-
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } catch (ExecutionException e) {
@@ -96,16 +86,12 @@ public class ServicesFragment extends Fragment {
                 }
                 connectionCheck = null;
                 connectionCheck = new ConnectionCheck();
-
-
-
             }
         });
     }
 
     private ArrayList<Service> getDataSet() {
         ArrayList<Service> results = DataManager.getInstance().getServices();
-        Log.d("Services: getDataSet() ", results.toString());
         return results;
     }
 

@@ -3,7 +3,6 @@ package eu.amdevelop.viamiaitalia.viamiaitalia.Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,7 +33,6 @@ public class ContactFragment extends Fragment {
         address = (TextView) view.findViewById(R.id.contact_address);
         try {
             Contact contact = getDataSet();
-            Log.d("onCreate getDataSet", contact.toString());
 
             name.setText(contact.getContactPerson());
             phone.setText(contact.getPhone());

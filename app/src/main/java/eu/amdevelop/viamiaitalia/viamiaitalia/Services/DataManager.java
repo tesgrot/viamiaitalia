@@ -1,7 +1,5 @@
 package eu.amdevelop.viamiaitalia.viamiaitalia.Services;
 
-import android.util.Log;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -40,12 +38,9 @@ public class DataManager {
     public ArrayList<Service> getServices() {
         destroyInstance();
         ArrayList<Service> posts = new ArrayList<>();
-
         try {
-
             Boolean connectionIsOn = connectionCheck.execute().get();
             if (connectionIsOn.booleanValue()) {
-                Log.d("XXX", "getContact: net available");
 
                 JSONArray jsonPosts = dataService.execute(IP_ADDRESS + "services").get();
 
@@ -58,9 +53,7 @@ public class DataManager {
                 Paper.book().delete("Services");
                 Paper.book().write("Services", posts);
                 return posts;
-            }
-            else {
-                Log.d("XXX", "getContact: no net");
+            } else {
                 posts = Paper.book().read("Services");
                 return posts;
             }
@@ -75,7 +68,6 @@ public class DataManager {
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
-
         return posts;
     }
 
@@ -84,11 +76,8 @@ public class DataManager {
         ArrayList<ServiceElement> elements = new ArrayList<>();
 
         try {
-
             Boolean connectionIsOn = connectionCheck.execute().get();
             if (connectionIsOn.booleanValue()) {
-                Log.d("XXX", "getContact: net available");
-
                 JSONArray jsonPosts = dataService.execute(IP_ADDRESS + "serviceElements/" + id).get();
 
                 for (int i = 0; i < jsonPosts.length(); i++) {
@@ -100,16 +89,13 @@ public class DataManager {
                 Paper.book().delete("ServiceElements_" + id);
                 Paper.book().write("ServiceElements_" + id, elements);
                 return elements;
-            }
-            else {
-                Log.d("XXX", "getContact: no net");
+            } else {
                 elements = Paper.book().read("ServiceElements_" + id);
                 return elements;
             }
 
         } catch (InterruptedException e) {
             e.printStackTrace();
-
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (JSONException e) {
@@ -127,16 +113,13 @@ public class DataManager {
         try {
             Boolean connectionIsOn = connectionCheck.execute().get();
             if (connectionIsOn.booleanValue()) {
-                Log.d("XXX", "getContact: net available");
                 JSONArray jsonOrders = dataService.execute(IP_ADDRESS + "me").get();
                 JSONObject jsonObject = jsonOrders.getJSONObject(0);
                 Order order = new Order(jsonObject);
                 Paper.book().delete("Order");
                 Paper.book().write("Order", order);
                 return order;
-            }
-            else {
-                Log.d("XXX", "getContact: no net");
+            } else {
                 Order order = Paper.book().read("Order");
                 return order;
             }
@@ -156,19 +139,14 @@ public class DataManager {
         destroyInstance();
 
         try {
-
-            Log.d("XXX", "getContact: zaciname");
             Boolean connectionIsOn = connectionCheck.execute().get();
             if (connectionIsOn.booleanValue()) {
-                Log.d("XXX", "getContact: net available");
                 JSONObject jsonObject = dataService.execute(IP_ADDRESS + "accommodation/" + id).get().getJSONObject(0);
                 Accommodation accommodation = new Accommodation(jsonObject);
                 Paper.book().delete("Accommodation");
                 Paper.book().write("Accommodation", accommodation);
                 return accommodation;
-            }
-            else {
-                Log.d("XXX", "getContact: no net");
+            } else {
                 Accommodation accommodation = Paper.book().read("Accommodation");
                 return accommodation;
             }
@@ -210,24 +188,18 @@ public class DataManager {
         destroyInstance();
 
         try {
-            Log.d("XXX", "getContact: zaciname");
             Boolean connectionIsOn = connectionCheck.execute().get();
             if (connectionIsOn.booleanValue()) {
-                Log.d("XXX", "getContact: net available");
                 JSONArray jsonContacts = dataService.execute(IP_ADDRESS + "contact").get();
                 JSONObject jsonObject = jsonContacts.getJSONObject(0);
                 Contact contact = new Contact(jsonObject);
                 Paper.book().delete("Contact");
                 Paper.book().write("Contact", contact);
                 return contact;
-            }
-            else {
-                Log.d("XXX", "getContact: no net");
+            } else {
                 Contact contact = Paper.book().read("Contact");
                 return contact;
             }
-
-
         } catch (InterruptedException e) {
             e.printStackTrace();
 
@@ -238,9 +210,7 @@ public class DataManager {
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
-
         return null;
-
     }
 
     public boolean verifyCode() {
@@ -261,7 +231,6 @@ public class DataManager {
     private void destroyInstance() {
         dataService = null;
         dataService = new DataService();
-
         connectionCheck = null;
         connectionCheck = new ConnectionCheck();
     }

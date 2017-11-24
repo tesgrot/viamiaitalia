@@ -24,7 +24,6 @@ import io.paperdb.Paper;
 public class NavigationDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-
     NavigationView navigationView = null;
     Toolbar toolbar = null;
     private ConnectionCheck connectionCheck = new ConnectionCheck();
@@ -32,7 +31,6 @@ public class NavigationDrawerActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
         Paper.init(this);
 
@@ -75,44 +73,24 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
-
         if (id == R.id.nav_order) {
-//            try {
-//                Boolean connectionIsOn = connectionCheck.execute().get();
-//                if (connectionIsOn.booleanValue() || Paper.exist("Order")) {
-
-                    OrderFragment orderFragment = new OrderFragment();
-                    android.support.v4.app.FragmentTransaction fragmentTransaction =
-                            getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.fragment_container, orderFragment);
-                    fragmentTransaction.commit();
-
-//                }
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            } catch (ExecutionException e) {
-//                e.printStackTrace();
-//            }
-//            connectionCheck = null;
-//            connectionCheck = new ConnectionCheck();
+            OrderFragment orderFragment = new OrderFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, orderFragment);
+            fragmentTransaction.commit();
         } else if (id == R.id.nav_accommodation) {
             try {
                 Boolean connectionIsOn = connectionCheck.execute().get();
                 if (connectionIsOn.booleanValue() || Paper.exist("Accommodation")) {
-
                     AccommodationFragment accommodationFragment = new AccommodationFragment();
                     Bundle bdl = new Bundle(1);
                     bdl.putInt("POSITION", 1); //TODO getnut index pre accommodation
@@ -134,13 +112,11 @@ public class NavigationDrawerActivity extends AppCompatActivity
             try {
                 Boolean connectionIsOn = connectionCheck.execute().get();
                 if (connectionIsOn.booleanValue() || Paper.exist("Services")) {
-
                     ServicesFragment servicesFragment = new ServicesFragment();
                     android.support.v4.app.FragmentTransaction fragmentTransaction =
                             getSupportFragmentManager().beginTransaction();
                     fragmentTransaction.replace(R.id.fragment_container, servicesFragment);
                     fragmentTransaction.commit();
-
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -151,12 +127,10 @@ public class NavigationDrawerActivity extends AppCompatActivity
             connectionCheck = new ConnectionCheck();
 
 
-
         } else if (id == R.id.nav_wine) {
             try {
                 Boolean connectionIsOn = connectionCheck.execute().get();
                 if (connectionIsOn.booleanValue() || Paper.exist("ServiceElements_1")) {
-
                     WineFragment wineFragment = new WineFragment();
                     Bundle bdl = new Bundle(1);
                     bdl.putInt("POSITION", 1);
@@ -165,7 +139,6 @@ public class NavigationDrawerActivity extends AppCompatActivity
                             getSupportFragmentManager().beginTransaction();
                     fragmentTransaction.replace(R.id.fragment_container, wineFragment);
                     fragmentTransaction.commit();
-
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -178,14 +151,11 @@ public class NavigationDrawerActivity extends AppCompatActivity
             try {
                 Boolean connectionIsOn = connectionCheck.execute().get();
                 if (connectionIsOn.booleanValue() || Paper.exist("Contact")) {
-
-
                     ContactFragment contactFragment = new ContactFragment();
                     android.support.v4.app.FragmentTransaction fragmentTransaction =
                             getSupportFragmentManager().beginTransaction();
                     fragmentTransaction.replace(R.id.fragment_container, contactFragment);
                     fragmentTransaction.commit();
-
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -194,7 +164,6 @@ public class NavigationDrawerActivity extends AppCompatActivity
             }
             connectionCheck = null;
             connectionCheck = new ConnectionCheck();
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

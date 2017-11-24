@@ -5,8 +5,6 @@
     android:layout_height="match_parent"
     tools:context="eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.ContactFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <ImageView
         android:id="@+id/contact_logo"
         android:layout_width="wrap_content"
@@ -21,50 +19,50 @@
 
     <TextView
         android:id="@+id/contact_name"
+        style="@style/Paragraph"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
 
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/hello_blank_fragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contact_logo"
-        style="@style/Paragraph"/>
+        app:layout_constraintTop_toBottomOf="@+id/contact_logo" />
 
     <TextView
         android:id="@+id/contact_phone"
+        style="@style/Paragraph"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
 
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/hello_blank_fragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contact_name"
-        style="@style/Paragraph"/>
+        app:layout_constraintTop_toBottomOf="@+id/contact_name" />
 
     <TextView
         android:id="@+id/contact_mail"
+        style="@style/Paragraph"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
 
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/hello_blank_fragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contact_phone"
-        style="@style/Paragraph"/>
+        app:layout_constraintTop_toBottomOf="@+id/contact_phone" />
 
     <TextView
         android:id="@+id/contact_address"
+        style="@style/Paragraph"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
 
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/hello_blank_fragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contact_mail"
-        style="@style/Paragraph"/>
+        app:layout_constraintTop_toBottomOf="@+id/contact_mail" />
 
 </android.support.constraint.ConstraintLayout>

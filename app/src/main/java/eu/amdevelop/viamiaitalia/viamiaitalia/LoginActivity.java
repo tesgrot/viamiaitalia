@@ -3,7 +3,6 @@ package eu.amdevelop.viamiaitalia.viamiaitalia;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,6 +17,7 @@ import com.bumptech.glide.Glide;
 
 import eu.amdevelop.viamiaitalia.viamiaitalia.Services.DataManager;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Services.DataService;
+import io.paperdb.Paper;
 
 /**
  * A login screen that offers login via email/password.
@@ -46,7 +46,6 @@ public class LoginActivity extends AppCompatActivity {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
                     String code = loginTV.getText().toString();
-                    Log.d("######", code);
                     dataService.setCode(code);
                     if (dataManager.verifyCode() == true) {
                         Intent intent = new Intent(LoginActivity.this, NavigationDrawerActivity.class);
@@ -58,12 +57,10 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 String code = loginTV.getText().toString();
-                Log.d("######", code);
                 dataService.setCode(code);
                 if (dataManager.verifyCode() == true) {
                     Intent intent = new Intent(LoginActivity.this, NavigationDrawerActivity.class);

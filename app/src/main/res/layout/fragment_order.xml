@@ -6,7 +6,6 @@
     android:orientation="vertical"
     tools:context="eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.OrderFragment">
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -22,27 +21,26 @@
                 android:layout_height="200dp"
                 android:contentDescription="accommodation image"
                 android:scaleType="centerCrop"
-                android:src="@drawable/logo" />
+                android:src="@android:drawable/screen_background_dark_transparent" />
 
             <TextView
                 android:id="@+id/order_headerTV"
                 style="@style/Header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
                 android:layout_marginBottom="12dp"
-                android:text="Accommodation Name"
-                 />
+                android:layout_marginTop="24dp"
+                android:text="Accommodation Name" />
 
             <TableLayout
                 android:id="@+id/order_infoTL"
                 style="@style/sidePadding"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="12dp"
-                android:layout_marginBottom="12dp"
                 android:stretchColumns="*">
 
                 <TableRow
@@ -170,9 +168,9 @@
                 android:id="@+id/order_checkinoutLL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:baselineAligned="false"
-                android:layout_marginTop="12dp"
                 android:layout_marginBottom="12dp"
+                android:layout_marginTop="12dp"
+                android:baselineAligned="false"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -187,27 +185,27 @@
 
                     <TextView
                         android:id="@+id/order_chin_dateTV"
+                        style="@style/Header"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="28/11/2017"
-                        style="@style/Header"/>
+                        android:text="28/11/2017" />
 
                     <TextView
                         android:id="@+id/order_chin_timeTV"
+                        style="@style/Subheader"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="14:00"
-                        style="@style/Subheader" />
+                        android:text="14:00" />
 
                     <TextView
                         android:id="@+id/order_chinTV"
+                        style="@style/Subheader"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Check In"
-                        style="@style/Subheader" />
+                        android:text="Check In" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -222,27 +220,27 @@
 
                     <TextView
                         android:id="@+id/order_chout_dateTV"
+                        style="@style/Header"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="4/12/2017"
-                        style="@style/Header" />
+                        android:text="4/12/2017" />
 
                     <TextView
                         android:id="@+id/order_chout_timeTV"
+                        style="@style/Subheader"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="10:00"
-                        style="@style/Subheader" />
+                        android:text="10:00" />
 
                     <TextView
                         android:id="@+id/order_choutTV"
+                        style="@style/Subheader"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Check Out"
-                        style="@style/Subheader" />
+                        android:text="Check Out" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -252,10 +250,10 @@
                 style="@style/Header"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="12dp"
                 android:layout_weight="1"
                 android:text="Accommodation Information"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="12dp"
                 />
 
             <TableLayout
@@ -263,10 +261,10 @@
                 style="@style/sidePadding"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="12dp"
-                android:layout_marginBottom="12dp"
                 android:stretchColumns="*">
 
                 <TableRow
@@ -323,9 +321,9 @@
                 style="@style/DarkButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="See more about Accommodation"
+                android:layout_marginBottom="24dp"
                 android:layout_marginTop="12dp"
-                android:layout_marginBottom="24dp"/>
+                android:text="See more about Accommodation" />
 
         </LinearLayout>
 

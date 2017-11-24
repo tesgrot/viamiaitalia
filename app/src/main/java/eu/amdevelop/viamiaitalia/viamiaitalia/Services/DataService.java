@@ -1,10 +1,6 @@
 package eu.amdevelop.viamiaitalia.viamiaitalia.Services;
 
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -13,9 +9,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 
 /**
  * Created by terezamadova on 10/11/2017.
@@ -27,6 +21,7 @@ public class DataService extends AsyncTask<String, Void, JSONArray> {
     public static final int READ_TIMEOUT = 15000;
     public static final int CONNECTION_TIMEOUT = 15000;
     private static String code;
+
     @Override
     protected JSONArray doInBackground(String... strings) {
         String stringUrl = strings[0];
@@ -34,17 +29,12 @@ public class DataService extends AsyncTask<String, Void, JSONArray> {
         String inputLine;
 
         try {
-            //Create a URL object holding our url
             URL myUrl = new URL(stringUrl);
-            //Create a connection
             HttpURLConnection connection = (HttpURLConnection) myUrl.openConnection();
 
-            //Set methods and timeouts
             connection.setRequestMethod(REQUEST_METHOD);
             connection.setReadTimeout(READ_TIMEOUT);
             connection.setConnectTimeout(CONNECTION_TIMEOUT);
-
-            Log.d("!!!!!!!!", " PRED CONNECTION CONNECT");
 
             connection.setRequestProperty("Authorization", code);
             int statuscode = connection.getResponseCode();
@@ -52,38 +42,21 @@ public class DataService extends AsyncTask<String, Void, JSONArray> {
 
                 connection.connect();
                 InputStreamReader streamReader = new InputStreamReader(connection.getInputStream());
-                Log.d("!!!!!!!!", " InputStreamReader");
-                //Create a new buffered reader and String Builder
                 BufferedReader reader = new BufferedReader(streamReader);
-                Log.d("!!!!!!!!", " BufferedReader");
                 StringBuilder stringBuilder = new StringBuilder();
-                Log.d("!!!!!!!!", " StringBuilder");
-                //Check if the line we are reading is not null
                 while ((inputLine = reader.readLine()) != null) {
                     stringBuilder.append(inputLine);
                 }
-                //Close our InputStream and Buffered reader
                 reader.close();
                 streamReader.close();
-                //Set our result equal to our stringBuilder
                 result = stringBuilder.toString();
 
-                Log.d("JSON: ", result);
                 if (result.charAt(0) != '[') {
                     result = '[' + result + ']';
-                    Log.d("ROBI SA ARRAY", result);
                 }
                 JSONArray jsonPosts = new JSONArray(result);
-                Log.d("JSON: ", jsonPosts.toString());
                 return jsonPosts;
             }
-            //Connect to our url
-            Log.d("Connection: ", connection.toString());
-
-            Log.d("!!!!!!!!", " PO CONNECTION CONNECT");
-
-            //Create a new InputStreamReader
-
             return null;
 
         } catch (IOException e) {
@@ -93,14 +66,12 @@ public class DataService extends AsyncTask<String, Void, JSONArray> {
             e.printStackTrace();
             return null;
         }
-
     }
 
     @Override
     protected void onPostExecute(JSONArray posts) {
         super.onPostExecute(posts);
     }
-
 
     public void setCode(String code) {
         this.code = code;
