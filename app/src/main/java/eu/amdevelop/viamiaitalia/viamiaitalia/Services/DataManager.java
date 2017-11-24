@@ -9,6 +9,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
+import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Accommodation;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Contact;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Order;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Model.Service;
@@ -141,13 +142,29 @@ public class DataManager {
 
         } catch (InterruptedException e) {
             e.printStackTrace();
-
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
+        return null;
+    }
+
+    public Accommodation getAccommodation(int id) {
+        destroyInstance();
+
+        try {
+            JSONObject jsonObject = dataService.execute(IP_ADDRESS + "accommodation/" + id).get().getJSONObject(0);
+            Accommodation accommodation = new Accommodation(jsonObject);
+            return accommodation;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 

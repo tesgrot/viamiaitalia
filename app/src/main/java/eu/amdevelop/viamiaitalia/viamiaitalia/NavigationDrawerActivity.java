@@ -10,7 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 
 import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.AccommodationFragment;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Fragments.ContactFragment;
@@ -95,6 +94,9 @@ public class NavigationDrawerActivity extends AppCompatActivity
             fragmentTransaction.commit();
         } else if (id == R.id.nav_accommodation) {
             AccommodationFragment accommodationFragment = new AccommodationFragment();
+            Bundle bdl = new Bundle(1);
+            bdl.putInt("POSITION", 1); //TODO getnut index pre accommodation
+            accommodationFragment.setArguments(bdl);
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, accommodationFragment);
