@@ -1,4 +1,5 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,99 +21,163 @@
         android:layout_height="match_parent">
 
 
-
-    <LinearLayout
-        android:id="@+id/linlay"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            android:src="@android:drawable/screen_background_dark_transparent" />
-
-        <TextView
-            android:id="@+id/textView"
-            style="@style/Header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="24dp"
-            android:text="Villa Mare" />
-
-        <TextView
-            style="@style/Subheader"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="24dp"
-            android:text="Tuscany" />
-
-        <TextView
-            style="@style/Paragraph"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Accusantium repellat dolor ipsam quaerat. Possimus debitis iste illo sunt aut nihil suscipit eius. Architecto voluptate enim minus molestias. Dignissimos delectus inventore repudiandae qui rem est et. Recusandae consequuntur sed temporibus. Voluptatem vero natus rerum deserunt sit laborum." />
-
         <LinearLayout
+            android:id="@+id/linlay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:baselineAligned="false"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingBottom="24dp"
-            android:paddingTop="24dp">
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@android:drawable/screen_background_dark_transparent" />
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/Header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="24dp"
+                android:text="Villa Mare" />
+
+            <TextView
+                style="@style/Subheader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="24dp"
+                android:text="Tuscany" />
+
+            <TextView
+                style="@style/Paragraph"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Accusantium repellat dolor ipsam quaerat. Possimus debitis iste illo sunt aut nihil suscipit eius. Architecto voluptate enim minus molestias. Dignissimos delectus inventore repudiandae qui rem est et. Recusandae consequuntur sed temporibus. Voluptatem vero natus rerum deserunt sit laborum." />
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:baselineAligned="false"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="24dp"
+                android:paddingTop="24dp">
 
-                <TextView
-                    android:id="@+id/textView3"
-                    style="@style/Header"
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="4" />
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView7"
-                    style="@style/Subheader"
-                    android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/textView3"
+                        style="@style/Header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="4" />
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        style="@style/Subheader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bathrooms" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Bathrooms"
-                    />
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        style="@style/Header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="2" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        style="@style/Subheader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bedrooms" />
+                </LinearLayout>
+
             </LinearLayout>
+
+            <eu.amdevelop.viamiaitalia.viamiaitalia.CustomMapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="24dp"
 
-                <TextView
-                    android:id="@+id/textView4"
-                    style="@style/Header"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="2" />
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView8"
-                    style="@style/Subheader"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Bedrooms" />
+                    android:layout_height="match_parent"
+
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/address_text_1"
+                        style="@style/Paragraph"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/address_text_2"
+                        style="@style/Paragraph"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/address_text_3"
+                        style="@style/Paragraph"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TextView" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/navigate_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:layout_weight="2"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_navigate" />
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Navigate"
+                        android:textAlignment="center" />
+                </LinearLayout>
             </LinearLayout>
+
 
         </LinearLayout>
-
-        <eu.amdevelop.viamiaitalia.viamiaitalia.CustomMapView
-            android:id="@+id/mapView"
-            android:layout_width="match_parent"
-            android:layout_height="200dp" />
-
-    </LinearLayout>
     </ScrollView>
 </FrameLayout>

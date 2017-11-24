@@ -1,12 +1,15 @@
 package eu.amdevelop.viamiaitalia.viamiaitalia.Fragments;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -30,12 +33,25 @@ public class AccommodationFragment extends Fragment implements OnMapReadyCallbac
     private View mView;
     private boolean mapsSupported = true;
 
+    private LinearLayout navigateContainer;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.fragment_accommodation, container, false);
-
         getActivity().setTitle("Accommodation");
+
+        navigateContainer = mView.findViewById(R.id.navigate_container);
+        navigateContainer.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri gmmIntentUri = Uri.parse("google.navigation:q=Via+University,+Horsens");
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                startActivity(mapIntent);
+
+            }
+        });
 
         return mView;
     }

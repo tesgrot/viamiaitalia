@@ -8,7 +8,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
 
 import eu.amdevelop.viamiaitalia.viamiaitalia.Services.DataManager;
 import eu.amdevelop.viamiaitalia.viamiaitalia.Services.DataService;
@@ -46,6 +49,8 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "You entered incorrect code" + code, Toast.LENGTH_LONG).show();
             }
         });
+
+        Glide.with(this).load(R.drawable.italy_pic_min).into((ImageView) findViewById(R.id.login_hero));
     }
 }
 

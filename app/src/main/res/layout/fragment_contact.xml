@@ -23,8 +23,7 @@
         android:id="@+id/contact_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="24dp"
+
         android:layout_marginTop="8dp"
         android:text="@string/hello_blank_fragment"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,8 +35,7 @@
         android:id="@+id/contact_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="24dp"
+
         android:layout_marginTop="8dp"
         android:text="@string/hello_blank_fragment"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,8 +47,7 @@
         android:id="@+id/contact_mail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="24dp"
+
         android:layout_marginTop="8dp"
         android:text="@string/hello_blank_fragment"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,8 +59,7 @@
         android:id="@+id/contact_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="24dp"
+
         android:layout_marginTop="8dp"
         android:text="@string/hello_blank_fragment"
         app:layout_constraintEnd_toEndOf="parent"
