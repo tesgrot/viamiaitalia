@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context="eu.amdevelop.viamiaitalia.viamiaitalia.LoginActivity">
@@ -24,7 +25,7 @@
         <LinearLayout
             android:id="@+id/email_login_form"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
@@ -36,6 +37,8 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="64dp"
                 android:layout_marginTop="-50dp"
                 android:background="@drawable/logo_circle"
                 android:padding="50dp" />
@@ -49,10 +52,12 @@
                     android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/fab_margin"
                     android:hint="Access code"
                     android:inputType="text"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimaryDark" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -61,7 +66,7 @@
                 style="@style/DarkButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_gravity="bottom"
                 android:text="LOG IN"
                 android:textStyle="bold" />
 
