@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -40,19 +41,37 @@ public class WineFragment extends Fragment {
 
         position = getArguments().getInt("POSITION");
 
+
         service = DataManager.getInstance().getServices().get(position);
 
-        getActivity().setTitle(service.getName());
 
-        elements = DataManager.getInstance().getServiceElements(service.getId());
-        elements.add(0, elements.get(0));
+            getActivity().setTitle(service.getName());
 
-        serviceNameTV = (TextView) view.findViewById(R.id.ServiceNameTV);
-        servicePriceTV = (TextView) view.findViewById(R.id.ServicePriceTV);
-        elementsLV = (ListView) view.findViewById(R.id.elementsLV);
+            elements = DataManager.getInstance().getServiceElements(service.getId());
+            if (elements != null) {
+                elements.add(0, elements.get(0));
 
-        LVAdapter adapter = new LVAdapter(this.getContext(), elements, service);
-        elementsLV.setAdapter(adapter);
+                serviceNameTV = (TextView) view.findViewById(R.id.ServiceNameTV);
+                servicePriceTV = (TextView) view.findViewById(R.id.ServicePriceTV);
+                elementsLV = (ListView) view.findViewById(R.id.elementsLV);
+
+                LVAdapter adapter = new LVAdapter(this.getContext(), elements, service);
+                elementsLV.setAdapter(adapter);
+            }
+//            else {
+//                ServicesFragment servicesFragment = new ServicesFragment();
+//                android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
+//                android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                fragmentTransaction.replace(R.id.fragment_container, servicesFragment);
+//                fragmentTransaction.addToBackStack(null);
+//                fragmentTransaction.commit();
+//
+//                Toast.makeText(container.getContext(), "no no no", Toast.LENGTH_LONG).show();
+//            }
+
+
+
+
 
         return view;
     }
